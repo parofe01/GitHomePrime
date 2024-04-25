@@ -8,27 +8,33 @@ Tu equipo está compuesto por.
 -El jugador, que es el lider y coordinador de la expedición.
 -El veteranto, un ex-militar amigo del jugador que perdió a su familia en el incidente y decide ayudarte a abrirte paso y que el jugador pueda solucionar todo.
 -La cientifica, que ha investigado todo lo que se sabe sobre el caso y tratará de analizar y recabar información para resolver el problema
--El conserje, que conoce como es el edificio y te guiará por los caminos que nadie más conoce en florida.
+-El conserje, que conoce como es el edificio y te guiará por los caminos que nadie más conoce en florida, estuvo enfermo el día del incidente y no estuvo en la universidad.
+
+- Capítulo 1 - Catarroja:
 
 En el camino, muchos edificios han caido, bloqueando las calles del pueblos, debes elegir una ruta.
 
-Ruta del Ayuntamiento
+Ruta del Ayuntamiento:
 
 Se va desde la entrada a la calle "Camí Real hasta el Carrer de Sagasta, la zona que más población tenía, aun quedan unos cuantos edificios en pie que permiten el avance por la misma al ser la via principal del pueblo, tambien es donde habitaba la mayor parte de la poblacion.
 
-Actualmente las formas de vida que más merodean son ladrones temerarios y los pocos supervivientes que pudieron quedar del incidente que ahora han mutado.
+Actualmente las formas de vida que más merodean son ladrones temerarios y los pocos supervivientes que pudieron quedar del incidente que mutaron en su momento.
+
+Un grupo de mutados armados con elementos filosos por culpa de los ladrones temerarios, consiguen hacer un ataque dese una esquina y matan a la científica.
+
+Ruta de la Rambleta:
+
+Hay una menor cantidad de personas en la zona debido a que está en bastante mal estado por la cantidad de coches que hay en el primer sector, los coches de combustible fósil ahora son altamente reactivos a la proximidad de formas de vida, y pueden explotar si se les acerca algo vivo.
+
+El segundo sector es más tranquilo debido a que se ha de ir por el parque, que es un espacio abierto, lo cual reduce la posibilidad de un ataque sorpresa por la buena visibilidad. Hay pequeños animales mutados, no hay que bajar la guardia.
+
+Muere el conserje por acercarse a un coche antes de saber que estos pueden explotar.
+
+Ruta de Jaume Primer:
+
+La ruta más cercana a la huerta, zona plagada de animales, os ataca una horda de animales
+
+El veterano atrae la atención de los animales y conseguís escapar, debido a esto, muere el veterano.
 
 
-
-
-Ruta de la Rambleta
-
-
-
-
-
-Ruta de Jaume Primer
-
-
-
-
+- Capítulo 2 - Entrada a Florida 
