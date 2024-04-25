@@ -1,20 +1,20 @@
 The Tower.
-En florida universitaria tras un reciente aumento de presupuesto por una donación anónima, decidió construir el edificio E, un departamento dedicado al desarrollo y financiamiento de los mejores proyectos propuestos por sus alumnos para sacarlos a delante a nivel empresarial.
+En florida universitaria tras un reciente aumento de presupuesto por una donación anónima, decidió construir el Edificio E, un departamento dedicado al desarrollo y financiamiento de los mejores proyectos propuestos por sus alumnos para sacarlos a delante a nivel empresarial.
 
-En un experimento del departamento de ingenieria, hubo un accidente que provocó el arrasamiento de catarroja y albal, sin embargo, florida no se vió practicamente afectada por algún motivo pero si murió mucha gente, la zona quedó en un estado demasiado peligroso para siquiera acercarse, pasaron 50 años y la vegetación floreció alrededor de la universidad, parece que la fuerza del peligro ha disminuido pero lo datos indican que se está expandiendo el area de efecto y es necesario detenerlo, te vas a embarcar en una expedición de investigación partiendo desde Massanassa para averiguar lo que ha ocurrido ahí.
+En un experimento del departamento de ingenieria, hubo un accidente que provocó el arrasamiento de catarroja y albal, sin embargo, florida no se vió practicamente afectada por algún motivo pero si murió mucha gente, la zona quedó en un estado demasiado peligroso para siquiera acercarse, pasaron 50 años y la vegetación floreció alrededor de la universidad, parece que la fuerza del peligro ha disminuido pero lo datos indican que se está expandiendo el area de efecto, así como ha aparecido un orbe energetico sobre la universidad y es necesario detenerlo, te vas a embarcar en una expedición de investigación partiendo desde Massanassa para averiguar lo que ha ocurrido ahí.
 
 Tu equipo está compuesto por.
 
 -El jugador, que es el lider y coordinador de la expedición.
 -El veteranto, un ex-militar amigo del jugador que perdió a su familia en el incidente y decide ayudarte a abrirte paso y que el jugador pueda solucionar todo.
--La cientifica, que ha investigado todo lo que se sabe sobre el caso y tratará de analizar y recabar información para resolver el problema
--El conserje, que conoce como es el edificio y te guiará por los caminos que nadie más conoce en florida, estuvo enfermo el día del incidente y no estuvo en la universidad.
+-La cientifica, que ha investigado todo lo que se sabe sobre el caso y tratará de analizar y recabar información para resolver el problema.
+-El conserje, que conoce como es el edificio y te guiará por los caminos que nadie más conoce en florida, estuvo enfermo el día del incidente y pudo evitar morir porque no estuvo en la universidad.
 
-- Capítulo 1 - Catarroja:
+[ Capítulo 1 - Catarroja ]
 
 En el camino, muchos edificios han caido, bloqueando las calles del pueblos, debes elegir una ruta.
 
-Ruta del Ayuntamiento:
+-Ruta del Ayuntamiento:
 
 Se va desde la entrada a la calle "Camí Real hasta el Carrer de Sagasta, la zona que más población tenía, aun quedan unos cuantos edificios en pie que permiten el avance por la misma al ser la via principal del pueblo, tambien es donde habitaba la mayor parte de la poblacion.
 
@@ -22,7 +22,7 @@ Actualmente las formas de vida que más merodean son ladrones temerarios y los p
 
 Un grupo de mutados armados con elementos filosos por culpa de los ladrones temerarios, consiguen hacer un ataque dese una esquina y matan a la científica.
 
-Ruta de la Rambleta:
+-Ruta de la Rambleta:
 
 Hay una menor cantidad de personas en la zona debido a que está en bastante mal estado por la cantidad de coches que hay en el primer sector, los coches de combustible fósil ahora son altamente reactivos a la proximidad de formas de vida, y pueden explotar si se les acerca algo vivo.
 
@@ -30,7 +30,7 @@ El segundo sector es más tranquilo debido a que se ha de ir por el parque, que 
 
 Muere el conserje por acercarse a un coche antes de saber que estos pueden explotar.
 
-Ruta de Jaume Primer:
+-Ruta de Jaume Primer:
 
 La ruta más cercana a la huerta, zona plagada de animales, os ataca una horda de animales
 
@@ -38,3 +38,46 @@ El veterano atrae la atención de los animales y conseguís escapar, debido a es
 
 
 - Capítulo 2 - Entrada a Florida 
+
+Al llegar, desde fuera, podeis observar el orbe de energía del informe el cual recibe como unas corrientes de plasma de las azoteas de los edificios A, B y C, un aura proveniente del orbe de energia rodea el Edificio E. Podeis elegir entrar por la entrada principal pero esta estará cerrada, aunque os permitirá escuchar una conversación que os dará una pista, despues teneis que volver a la entrada de la cafeteria, la cafetería está vacía y se puede usar como punto de descanso antes de continuar con la investigación.
+
+Tras establecer una pequeña base de operaciones, podeis ir a cualquier edificio.
+
+-Edificio E:
+
+El aura que tenia el edificio resulta ser un campo de fuerza, por lo que la estructura queda bloqueada.
+
+-Edificio A
+
+-Edificio B
+
+-Edificio C
+
+Con la destrucción del emisor de cualquiera de los 3 edificios el orbe se vuelve inestable y se deshace y con él, el campo de fuerza del Edificio E.
+
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
