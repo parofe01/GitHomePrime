@@ -6,8 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     // Variables
 
-    public float speedMax;
-    public float acceleration;
+    public float speedCurrent;
+    public float speedMaxForward;
+    public float speedMaxBackward;
+    public float speedAcceleration;
+    public float brakeResistance;
+    public float trackResistance;
+
     public float rotationSpeed;
 
 
@@ -21,16 +26,70 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Inputs();
+        KartPhysics();
     }
 
 
 
     void Inputs()
     {
+        // Forwards/Backwards Inputs
+        // Speed Value increments while pressing "W" but cannot be more that the max speed
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector2.up * Time.deltaTime * speedMax);
+            if(speedCurrent >= 0)
+            {
+                speedCurrent += Time.deltaTime * speedAcceleration;
+            }
+            else
+            {
+                speedCurrent += Time.deltaTime * brakeResistance;
+            }
+            if (speedCurrent > speedMaxForward)
+            {
+                
+                speedCurrent = speedMaxForward;
+            }
         }
+        // Speed Value decresses while pressing "S" but cannot be less that the half of the negative max speed
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (speedCurrent <= 0)
+            {
+                speedCurrent -= Time.deltaTime * speedAcceleration;
+            }
+            else
+            {
+                speedCurrent -= Time.deltaTime * brakeResistance;
+            }
+            if (speedCurrent < -speedMaxBackward)
+            {
+                // 
+                speedCurrent = -speedMaxBackward;
+            }
+        }
+        // If neither "W" or "S" are pressed, the kart will start to slow down due to friction with the track
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        {
+            if (speedCurrent > 0)
+            {
+                speedCurrent -= Time.deltaTime * trackResistance;
+                if (speedCurrent < 0)
+                {
+                    speedCurrent = 0;
+                }
+            }
+            if (speedCurrent < 0)
+            {
+                speedCurrent += Time.deltaTime * trackResistance;
+                if (speedCurrent > 0)
+                {
+                    speedCurrent = 0;
+                }
+            }
+        }
+
+        // Turning Inputs
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
@@ -39,5 +98,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
+    }
+
+    void KartPhysics()
+    {
+        // This is the phisics of the inertia of the kart due to the current speed
+        transform.Translate(Vector2.up * Time.deltaTime * speedCurrent);
     }
 }
