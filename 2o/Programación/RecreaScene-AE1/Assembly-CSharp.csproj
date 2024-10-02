@@ -60,22 +60,55 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.30f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
-    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
-    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
-    <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
-    <Compile Include="Assets\IgniteCoders\Simple Water Shader\Resources\WaterReflection.cs" />
-    <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
-    <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
-    <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
+    <Compile Include="Assets\Imports\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
+    <Compile Include="Assets\Imports\StarterAssets\FirstPersonController\Scripts\BasicRigidBodyPush.cs" />
+    <Compile Include="Assets\Imports\TerrainDemoScene_URP\Scripts\TerrainTreeToggle.cs" />
+    <Compile Include="Assets\Imports\StarterAssets\FirstPersonController\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\Imports\TerrainDemoScene_URP\Scripts\Readme.cs" />
+    <Compile Include="Assets\Imports\IgniteCoders\Simple Water Shader\Resources\WaterReflection.cs" />
+    <Compile Include="Assets\Imports\TerrainDemoScene_URP\Scripts\SceneAnnotation.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
-    <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\TerrainSampleAssets\ThirdPartyNotices.txt" />
-    <None Include="Assets\StarterAssets\license.txt" />
-    <None Include="Assets\TerrainSampleAssets\ShaderGraphs\CustomFunctions\CustomLighting.hlsl" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\Stamps.txt" />
+    <None Include="Assets\Imports\TerrainSampleAssets\ThirdPartyNotices.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMPro.cginc" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\FadeDistances.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\Importing maps.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_Bitmap.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\ProxyTerrain.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMPro_Mobile.cginc" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF SSD.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Scripts\Resources\SceneAnnotation.uxml" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\Layers.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\Welcome.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\Reflections.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF.shader" />
+    <None Include="Assets\Imports\StarterAssets\license.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMPro_Properties.cginc" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Scripts\Resources\SceneAnnotationUI.uss" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMPro_Surface.cginc" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\DenseDetails.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Imports\_Bad_Raccoon\_3D Realistic Terrain Free\README FIRST.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Fonts\License.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\Tiles.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\SkyboxAssets.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\WaterShader.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\Notes\SpeedTrees.txt" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Imports\TerrainSampleAssets\ShaderGraphs\CustomFunctions\CustomLighting.hlsl" />
+    <None Include="Assets\Imports\TerrainDemoScene_URP\TextMeshPro\Shaders\TextMeshPro\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -416,14 +449,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
