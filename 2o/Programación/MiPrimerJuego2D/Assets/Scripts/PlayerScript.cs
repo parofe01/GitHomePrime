@@ -11,6 +11,16 @@ public class PlayerScript : MonoBehaviour
     float estatura;
     bool vivo;
     float playerSpeed;
+    bool isAttacking = false;
+
+    // Timers
+
+
+
+    // Components
+
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
 
     void Start()
@@ -18,6 +28,9 @@ public class PlayerScript : MonoBehaviour
         vida = 100;
         vivo = true;
         playerSpeed = 10;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,27 +40,57 @@ public class PlayerScript : MonoBehaviour
         
     }
 
-    void Inputs()
+    private void Inputs()
     {
-        if (Input.GetKey(KeyCode.W))
+
+        // Movimento Horizontal
+        float inputHorizontal = Input.GetAxisRaw("Horizontal");
+        bool inputAttack1 = Input.GetButtonDown("Fire1");
+
+        // Animación idle
+        if (inputHorizontal == 0 && !isAttacking)
         {
-            transform.Translate(Vector2.up * playerSpeed * Time.deltaTime);
+            animator.Play("idle_Player");
         }
-        if (Input.GetKey(KeyCode.A))
+
+        // Movimiento Horizontal + Animación andar
+        if (inputHorizontal != 0 && !isAttacking)
         {
             // Space.World hace que el personaje se mueva en base al eje de coordenasa del mundo, usado sobretodo en plataformas 2D
             // puesto que independientemente de la rotacion del personaje, las coordenadas que cambian son con respecto a la rotación del mundo
             // Space.Self hace que el personaje se mueva en base a su propio eje de coordenas, usado sobretodo en juegos 3D
             // puesto que al rotar el personaje te interesa que vaya a la dirección a la que mira
-            transform.Translate(Vector2.left * playerSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector2.right * Time.deltaTime * playerSpeed * inputHorizontal, Space.World);
+
+            // Movimiento a derecha
+            if (inputHorizontal > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+
+            // Movimiento a izquierda
+            if (inputHorizontal < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+
+            animator.Play("walk_Player");
         }
-        if (Input.GetKey(KeyCode.S))
+
+        // Animación Ataque 1
+        if (inputAttack1)
         {
-            transform.Translate(Vector2.down * playerSpeed * Time.deltaTime);
+            animator.Play("attack1_Player");
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector2.right * playerSpeed * Time.deltaTime, Space.World);
-        }
+    }
+
+    public void SetIsAttackingTrue()
+    {
+        isAttacking = true;
+    }
+
+    public void SetIsAttackingFalse() 
+    { 
+        isAttacking = false; 
     }
 }
