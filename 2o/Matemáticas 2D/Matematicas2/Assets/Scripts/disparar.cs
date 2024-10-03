@@ -107,8 +107,8 @@ public class disparar : MonoBehaviour
     // Sea la suma de dos valores aleatorios, de modo que su valor esté en el rango[0, 500]
     float P03RandomDosDados() 
     {
-        float num1 = URandom.Range(0f, valorMin/2);
-        float num2 = URandom.Range(0f, valorMax / 2);
+        float num1 = URandom.Range(valorMin, valorMax / 2);
+        float num2 = URandom.Range(valorMin, valorMax / 2);
 
         float sum = num1 + num2;
 

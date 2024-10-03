@@ -53,6 +53,7 @@ public class GenerarTerreno : MonoBehaviour
                 heights[x, y] = CalculateHeight(x, y);   
             }
         }
+
         return heights;
     }
     
