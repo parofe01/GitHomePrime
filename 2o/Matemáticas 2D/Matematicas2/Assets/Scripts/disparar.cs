@@ -6,7 +6,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using URandom = UnityEngine.Random;
-using static UnityEditor.PlayerSettings;
 
 public class disparar : MonoBehaviour
 {
@@ -16,15 +15,19 @@ public class disparar : MonoBehaviour
     public float valorMin;
     public int numDados;
 
+    public float bonus;
+    public float probabilidad;
+    public bool subiendo;
+    public float valorLanzamiento;
+
     public GameObject bola;
     float timeAux;
-    TextMeshPro texto;
+    public TextMeshProUGUI texto;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        texto = GetComponent<TextMeshPro>();
         timeAux = Time.time;
     }
 
@@ -47,6 +50,8 @@ public class disparar : MonoBehaviour
 
             timeAux = Time.time;
         }
+
+        SubeBaja();
     }
 
     // Funcion para seleccionar la funcion desde el inspector
@@ -57,33 +62,34 @@ public class disparar : MonoBehaviour
         switch (f)
         {
             case 1:
-                P01FuerzaFija();
+                fuerzaFinal = P01FuerzaFija(valorMax);
                 break;
             case 2:
-                P02RandomRange();
+                fuerzaFinal = P02RandomRange(valorMin, valorMax);
                 break;
             case 3:
-                P03RandomDosDados();
+                fuerzaFinal = P03RandomDosDados(valorMin, valorMax);
                 break;
             case 4:
-                P04RandomVariosDados();
+                fuerzaFinal = P04RandomVariosDados(numDados, valorMin, valorMax);
                 break;
             case 5:
-                P05MaxDados();
+                fuerzaFinal = P05MaxDados(numDados, valorMin, valorMax);
                 break;
             case 6:
-                P06DescatarMinDados();
+                fuerzaFinal = P06DescatarMinDados(numDados, valorMin, valorMax);
                 break;
             case 7:
-                P07DescatarMinYVolverATirar();
+                fuerzaFinal = P07DescatarMinYVolverATirar(numDados, valorMin, valorMax);
                 break;
             case 8:
-                P08DescatarMaxYVolverATirar();
+                fuerzaFinal = P08DescatarMaxYVolverATirar(numDados, valorMin, valorMax);
                 break;
             case 9:
-                P09PosibleBonus();
+                fuerzaFinal = P09PosibleBonus(valorMax, probabilidad, bonus);
                 break;
         }
+        texto.text = fuerzaFinal.ToString();
         return fuerzaFinal;
     }
 
@@ -93,69 +99,70 @@ public class disparar : MonoBehaviour
     // el numero de dados
 
     // Impulso con valor fijo (500)
-    float P01FuerzaFija() 
+    float P01FuerzaFija(float max) 
     {
-        return valorMax;
+        return max;
     }
 
     // Impulso aleatorio en un rango de valores definido[200, 500]
-    float P02RandomRange() 
+    float P02RandomRange(float min, float max) 
     {
-        return URandom.Range(valorMin, valorMax);
+        return URandom.Range(min, max);
     }
 
     // Sea la suma de dos valores aleatorios, de modo que su valor esté en el rango[0, 500]
-    float P03RandomDosDados() 
+    float P03RandomDosDados(float min, float max) 
     {
-        float num1 = URandom.Range(valorMin, valorMax / 2);
-        float num2 = URandom.Range(valorMin, valorMax / 2);
+        float num1 = URandom.Range(min, max / 2);
+        float num2 = URandom.Range(min, max / 2);
 
         float sum = num1 + num2;
-
         return sum;
     }
 
     // Sea la suma de varios dados (éste será una variable que podamos modificar). De modo que el valor de la suma esté en el rango[0, 500]
-    float P04RandomVariosDados()
+    float P04RandomVariosDados(int dados, float min, float max)
     {
         float suma = 0f;
 
-        for (int i = 0; i < numDados; i++)
+        for (int i = 0; i < dados; i++)
         {
-            suma += URandom.Range(valorMin, valorMax / numDados);
+            suma += URandom.Range(min, max / dados);
         }
 
         return suma;
     }
 
     // Se lanzan varios dados y se obtiene el mayor de ellos
-    float P05MaxDados()
+    float P05MaxDados(int dados, float min, float max)
     {
         float mayor = 0f;
         float valor = 0f;
 
-        for (int i = 0; i < numDados; i++)
+        for (int i = 0; i < dados; i++)
         {
-            valor = URandom.Range(valorMin, valorMax / numDados);
-            if (valor > mayor)
-            {
+            valor = URandom.Range(min, max);
+
+            if (valor > mayor) 
+            { 
                 mayor = valor;
             }
+
         }
         
         return mayor;
     }
 
     // El valor del impulso será la suma de n dados. Se lanzarán n+1 dados y se descarta el menor de ellos
-    float P06DescatarMinDados()
+    float P06DescatarMinDados(int dados, float min, float max)
     {
         float suma = 0f;
         float valor = 0f;
         float menor = 0f;
 
-        for (int i = 0; i <= numDados; i++)
+        for (int i = 0; i <= dados; i++)
         {
-            valor = URandom.Range(valorMin, valorMax / numDados);
+            valor = URandom.Range(min, max / dados);
             suma += valor;
             if (valor < menor)
             {
@@ -167,15 +174,15 @@ public class disparar : MonoBehaviour
         return suma;
     }
     // El valor del impulso será la suma de n dados. Se lanzarán n dados, se descartará el menor y se volverá a tirar éste
-    float P07DescatarMinYVolverATirar()
+    float P07DescatarMinYVolverATirar(int dados, float min, float max)
     {
         float suma = 0f;
         float valor = 0f;
-        float menor = valorMax;
+        float menor = max;
 
-        for (int i = 0; i <= numDados; i++)
+        for (int i = 0; i <= dados; i++)
         {
-            valor = URandom.Range(valorMin, valorMax / numDados);
+            valor = URandom.Range(min, max / dados);
             suma += valor;
             if (valor < menor)
             {
@@ -184,21 +191,21 @@ public class disparar : MonoBehaviour
         }
         suma -= menor;
 
-        valor = URandom.Range(valorMin, valorMax / numDados);
+        valor = URandom.Range(min, max / dados);
         suma += valor;
 
         return suma;
     }
     // El valor del impulso será la suma de n dados. Se lanzarán n+1 dados y se descarta el mayor de ellos
-    float P08DescatarMaxYVolverATirar()
+    float P08DescatarMaxYVolverATirar(int dados, float min, float max)
     {
         float suma = 0f;
         float valor = 0f;
-        float mayor = valorMin;
+        float mayor = min;
 
-        for (int i = 0; i <= numDados; i++)
+        for (int i = 0; i <= dados; i++)
         {
-            valor = URandom.Range(valorMin, valorMax / numDados);
+            valor = URandom.Range(min, max / dados);
             suma += valor;
             if (valor > mayor)
             {
@@ -206,17 +213,44 @@ public class disparar : MonoBehaviour
             }
         }
         suma -= mayor;
-
+        suma += URandom.Range(min, max / dados);
         return suma;
     }
     // Se añadirá un bonus al impulso con una probabilidad de 20% de que esto ocurra
-    float P09PosibleBonus() 
+    float P09PosibleBonus(float max, float prob, float b) 
     {
-        return 0;
+        float valor = max;
+        if (URandom.Range(0, 100) < prob)
+        {
+            valor += b;
+            return valor;
+        }
+        return valor;
     }
 
 
+    // Movimiento Cañon
 
+    void SubeBaja()
+    {
+        if (subiendo == true)
+        {
+            transform.Translate(Vector3.up * 2 * Time.deltaTime);
+            if (transform.position.y > 4)
+            {
+                subiendo = false;
+            }
+        }
+        else
+        {
+            transform.Translate(Vector3.down * 2 * Time.deltaTime);
+            if (transform.position.y < -1)
+            {
+                subiendo = true;
+            }
+        }
+    }
 
+    
 
 }

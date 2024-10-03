@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 2069430149}
   - component: {fileID: 2069430148}
   - component: {fileID: 2069430147}
+  - component: {fileID: 2069430151}
   m_Layer: 0
   m_Name: bola
   m_TagString: Untagged
@@ -722,6 +723,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069430151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069430145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddcb00f5253bfe843bf058654fbf73f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100015972
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,11 +867,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d5411b3f2900a47b70c1982d6ef2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  functSelected: 2
+  functSelected: 1
   valorMax: 500
   valorMin: 200
-  numDados: 0
+  numDados: 5
+  bonus: 30
+  probabilidad: 20
+  subiendo: 0
+  valorLanzamiento: 0
   bola: {fileID: 2069430145}
+  texto: {fileID: 601906105}
 --- !u!212 &2120415813
 SpriteRenderer:
   m_ObjectHideFlags: 0
