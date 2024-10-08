@@ -7,7 +7,8 @@ public class instanciarSuelo : MonoBehaviour {
 	// Variables
 	public GameObject[] tipoSuelos;
 	public int numeroTipoSuelos;
-	public float multiplicadorDesplazamientoY, velocidadSuelo;
+	public float multiplicadorDesplazamientoY; 
+	public float velocidadSuelo;
 
 	// Use this for initialization
 	void Start () 
