@@ -4,54 +4,21 @@ using UnityEngine;
 
 public class CubeMovement : MonoBehaviour
 {
-    public int width = 256;
-    public int height = 256;
-    public float scale = 20f;
-    public float offsetX = 100f;
-    public float offsetY = 100f;
-
-    public float multiplicadorDesplazamientoY;
-    public float velocidadSuelo;
-
-    public GameObject cube;
-
     // Start is called before the first frame update
+    public float speed;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        GenerateTexture();
-    }
+        transform.Translate(Vector3.back * speed * Time.deltaTime);
 
-    void GenerateTexture()
-    {
-        float perlinHeight;
-        for (int x = 0; x < width; x++)
+        if (transform.position.z < -6)
         {
-            for (int y = 0; y < height; y++)
-            {
-                perlinHeight = CalcularColor(x, y);
-                if (perlinHeight < 0.4)
-                {
-                    Instantiate<>
-                }
-            }
+            Destroy(gameObject);
         }
-        
-    }
-
-    float CalcularColor(int x, int y)
-    {
-
-        float xCoord = (float)x / width * scale + Random.Range(0, 999999f);
-        float yCoord = (float)y / height * scale + Random.Range(0, 999999f);
-
-        float value = Mathf.PerlinNoise(xCoord, yCoord);
-
-        return value;
     }
 }
