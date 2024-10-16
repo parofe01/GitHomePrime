@@ -14,7 +14,7 @@ public class BulletGeneration : MonoBehaviour
         if (timer <= 0f)
         {
             timer = 2f;
-            GenerateObjects();
+            GenerateBullets();
         }
         GeneratorTimer();
     }
@@ -26,7 +26,7 @@ public class BulletGeneration : MonoBehaviour
 
     void GenerateBullets()
     {
-        Vector 3 = new Vector 3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Instantiate<GameObject>(bullet, pos, Quaternion.identity);
     }
 }

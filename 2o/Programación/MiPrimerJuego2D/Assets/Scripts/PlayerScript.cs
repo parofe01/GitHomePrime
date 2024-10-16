@@ -1,45 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Variables
 
-    int vida;
-    string nombre;
-    float estatura;
-    bool vivo;
-    float playerSpeed;
-    bool isAttacking = false;
-
-    // Timers
-
-
+    public float playerSpeed;
 
     // Components
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    // Enumeracion
+
+    public enum State { Idle, Walk, Attack_Sword, Attack_Bow};
+    public State myState;
+
 
     void Start()
-    {
-        vida = 100;
-        vivo = true;
-        playerSpeed = 10;
+    { 
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        SetState(State.Idle);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Inputs();
-        
+        StateMachine();
     }
-
+    /*
     private void Inputs()
     {
 
@@ -83,14 +79,94 @@ public class PlayerScript : MonoBehaviour
             animator.Play("attack1_Player");
         }
     }
-
-    public void SetIsAttackingTrue()
+    */
+    private void StateMachine()
     {
-        isAttacking = true;
+        switch (myState)
+        {
+            case State.Idle:
+                Idle();
+                break;
+            case State.Walk:
+                Walk();
+                break;
+            case State.Attack_Sword:
+                Attack_Sword();
+                break;
+            case State.Attack_Bow:
+                Attack_Bow();
+                break;
+        }
     }
 
-    public void SetIsAttackingFalse() 
-    { 
-        isAttacking = false; 
+    private void Idle()
+    {
+        animator.Play("idle_Player");
+
+        /////////////////////////////////////////
+
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            SetState(State.Walk);
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            SetState(State.Attack_Sword);
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            SetState(State.Attack_Bow);
+        }
     }
+
+    private void Walk()
+    {
+        float inputHorizontal = Input.GetAxisRaw("Horizontal");
+            transform.Translate(Vector2.right * Time.deltaTime * playerSpeed * inputHorizontal, Space.World);
+
+            // Movimiento a derecha
+            if (inputHorizontal > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+
+            // Movimiento a izquierda
+            if (inputHorizontal < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+
+            animator.Play("walk_Player");
+
+        /////////////////////////////////////////
+
+        if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+            SetState(State.Idle);
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            SetState(State.Attack_Sword);
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            SetState(State.Attack_Bow);
+        }
+    }
+    private void Attack_Sword()
+    {
+        animator.Play("attack1_Player");
+    }
+    private void Attack_Bow()
+    {
+        animator.Play("bow_Player");
+    }
+
+    private void SetState(State s)
+    {
+        myState = s;
+    }
+
 }
