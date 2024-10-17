@@ -11,10 +11,5 @@ public class ObjectMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.back * speed * Time.deltaTime);
-
-        if (transform.position.z < -6)
-        {
-            Destroy(gameObject);
-        }
     }
 }

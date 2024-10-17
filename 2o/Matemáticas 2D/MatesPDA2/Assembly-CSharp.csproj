@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ObjectMovement.cs" />
+    <Compile Include="Assets\Scripts\PowerUpRotation.cs" />
     <Compile Include="Assets\Scripts\ObjectGeneration.cs" />
+    <Compile Include="Assets\Scripts\Detroyer.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\BulletGeneration.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -34,9 +34,9 @@ public class ObjectGeneration : MonoBehaviour
         for (float x = -4.5f; x < 5.5; x++)
         {
             perlinHeight = CalcularAltura(x, 10);
-            if (perlinHeight < 0.4)
+            if (perlinHeight < 0.3)
             {
-                Vector3 pos = new Vector3(x, 0.5f, 10);
+                Vector3 pos = new Vector3(x, 0.5f, 15);
                 Instantiate<GameObject>(cube, pos, Quaternion.identity);
             }
             else
@@ -52,12 +52,12 @@ public class ObjectGeneration : MonoBehaviour
         Debug.Log(value);
         if (value <= 5)
         {
-            Vector3 pos = new Vector3(x, 0.5f, 10);
+            Vector3 pos = new Vector3(x, 0f, 15);
             Instantiate<GameObject>(tanque, pos, Quaternion.identity);
         }
         if (value >= 95)
         {
-            Vector3 pos = new Vector3(x, 0.5f, 10);
+            Vector3 pos = new Vector3(x, 0.5f, 15);
             Instantiate<GameObject>(powerUp, pos, Quaternion.identity);
         }
     }

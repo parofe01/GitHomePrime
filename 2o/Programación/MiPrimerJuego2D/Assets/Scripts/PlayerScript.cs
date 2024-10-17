@@ -124,19 +124,19 @@ public class PlayerScript : MonoBehaviour
     private void Walk()
     {
         float inputHorizontal = Input.GetAxisRaw("Horizontal");
-            transform.Translate(Vector2.right * Time.deltaTime * playerSpeed * inputHorizontal, Space.World);
+        transform.Translate(Vector2.right * Time.deltaTime * playerSpeed * inputHorizontal, Space.World);
 
-            // Movimiento a derecha
-            if (inputHorizontal > 0)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
+        // Movimiento a derecha
+        if (inputHorizontal > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
 
-            // Movimiento a izquierda
-            if (inputHorizontal < 0)
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
+        // Movimiento a izquierda
+        if (inputHorizontal < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
 
             animator.Play("walk_Player");
 
