@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed; 
 
     // Components
-
+    Animator animator;
 
     // GameObject
 
@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetMenuState(MenuState.Off);
+        SetPlayerState(PlayerState.Idle);
     }
 
     // Update is called once per frame
@@ -69,11 +70,28 @@ public class PlayerController : MonoBehaviour
 
     void PlayerIdle()
     {
+        animator.Play("Idle");
+
+        /////////////////////////////
+        
+        if (playerState == PlayerState.Idle) SetPlayerState(PlayerState.Movement);
 
     }
 
+    void PlayerWalking()
+    {
+        if (Input.GetButton(""))
+        {
+            animator.Play("Running");
+        }
+        else
+        {
+            animator.Play("Walking");
+        }
+    }
 
-    void Jump()
+
+    void PlayerJump()
     {
 
     }
