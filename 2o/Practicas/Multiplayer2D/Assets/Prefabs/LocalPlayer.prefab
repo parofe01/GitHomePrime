@@ -95,8 +95,8 @@ GameObject:
   - component: {fileID: 279599858878450558}
   - component: {fileID: 4052255657262457342}
   - component: {fileID: 4762960307219915406}
-  - component: {fileID: 6911473778142586326}
   - component: {fileID: 8502759009469062504}
+  - component: {fileID: 6911473778142586326}
   - component: {fileID: 1724062029922327562}
   - component: {fileID: 7376275099730559557}
   - component: {fileID: 8287767662447751748}
@@ -171,20 +171,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6911473778142586326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4764482248914418496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e25399bfdfecae419303defaaa4eb2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 3608385440998142179}
-  playerSpeed: 10
 --- !u!114 &8502759009469062504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +192,20 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &6911473778142586326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4764482248914418496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e25399bfdfecae419303defaaa4eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 3608385440998142179}
+  playerSpeed: 10
 --- !u!114 &1724062029922327562
 MonoBehaviour:
   m_ObjectHideFlags: 0

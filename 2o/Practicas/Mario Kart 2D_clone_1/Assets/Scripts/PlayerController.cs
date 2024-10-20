@@ -27,6 +27,7 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsOwner) return;
         Inputs();
         KartPhysics();
     }
