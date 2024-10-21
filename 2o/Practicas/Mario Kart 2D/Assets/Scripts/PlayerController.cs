@@ -108,4 +108,19 @@ public class PlayerController : NetworkBehaviour
         // This is the phisics of the inertia of the kart due to the current speed
         transform.Translate(Vector2.up * Time.deltaTime * speedCurrent);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Wall"))
+        {
+            if (speedCurrent <= 0)
+            {
+                speedCurrent = 1;
+            }
+            else
+            {
+                speedCurrent = -1;
+            }
+        }
+    }
 }
