@@ -9,6 +9,9 @@ public class PlayerScript : MonoBehaviour
 
     public float playerSpeed;
 
+    // GameObjects
+    public GameObject arrow;
+
     // Components
 
     private SpriteRenderer spriteRenderer;
@@ -124,6 +127,17 @@ public class PlayerScript : MonoBehaviour
     private void Walk()
     {
         float inputHorizontal = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButton("Run"))
+        {
+            inputHorizontal *= 2;
+            animator.Play("run_Player");
+        }
+        else
+        {
+            animator.Play("walk_Player");
+        }
+
         transform.Translate(Vector2.right * Time.deltaTime * playerSpeed * inputHorizontal, Space.World);
 
         // Movimiento a derecha
@@ -137,8 +151,8 @@ public class PlayerScript : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-
-            animator.Play("walk_Player");
+        
+        
 
         /////////////////////////////////////////
 
@@ -162,6 +176,19 @@ public class PlayerScript : MonoBehaviour
     private void Attack_Bow()
     {
         animator.Play("bow_Player");
+    }
+
+    void ShootArrow()
+    {
+        if (transform.eulerAngles.y == 0)
+        {
+            Instantiate(arrow, transform.position + new Vector3(1, 0, 0), transform.rotation);
+
+        }
+        else
+        {
+            Instantiate(arrow, transform.position + new Vector3(-1, 0, 0), transform.rotation);
+        }
     }
 
     private void SetState(State s)
