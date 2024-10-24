@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Indestructible
+  - Wall
+  - Bullet
+  - PowerUp
+  - Torret
   layers:
   - Default
   - TransparentFX

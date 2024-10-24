@@ -4,24 +4,13 @@ using UnityEngine;
 
 public class BulletGeneration : MonoBehaviour
 {
-    float timer = 0f;
 
     public GameObject bullet;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (timer <= 0f)
-        {
-            timer = 2f;
-            GenerateBullets();
-        }
-        GeneratorTimer();
-    }
-
-    void GeneratorTimer()
-    {
-        timer -= Time.deltaTime;
+        InvokeRepeating("GenerateBullets", 2f, 4f);
     }
 
     void GenerateBullets()

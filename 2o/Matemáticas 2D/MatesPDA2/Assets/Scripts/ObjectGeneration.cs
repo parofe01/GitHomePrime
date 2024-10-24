@@ -49,7 +49,6 @@ public class ObjectGeneration : MonoBehaviour
     void GenerarExtras(float x)
     {
         float value = Random.Range(0f, 100f);
-        Debug.Log(value);
         if (value <= 5)
         {
             Vector3 pos = new Vector3(x, 0f, 15);
