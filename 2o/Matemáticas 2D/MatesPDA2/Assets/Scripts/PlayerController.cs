@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class PlayerController : MonoBehaviour
 {
     public float playerSpeed;
-    public float playerVida = 5;
+    public float playerVida;
 
     float inputHorizontal;
     float inputVertical;
 
     Rigidbody rb;
     public GameObject GameOver;
+    public Text TextoVida;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerVida = 5;
         rb = GetComponent<Rigidbody>();
         GameOver.SetActive(false);
     }
@@ -25,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Inputs();
+        UpdateCanvas();
         if (playerVida <= 0)
         {
             Destroy(gameObject);
@@ -46,14 +51,19 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector3.left * Time.deltaTime * playerSpeed, Space.World);
         }
-        if (transform.position.x >= -4.5 && inputVertical > 0)
+        if (transform.position.z <= 4.5 && inputVertical > 0)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed, Space.World);
         }
-        if (transform.position.x <= 4.5 && inputVertical < 0)
+        if (transform.position.z >= -4.5 && inputVertical < 0)
         {
             transform.Translate(Vector3.back * Time.deltaTime * playerSpeed, Space.World);
         }
+    }
+
+    private void UpdateCanvas()
+    {
+        TextoVida.text = "VIDA: " + playerVida;
     }
 
     private void OnTriggerEnter(Collider other)

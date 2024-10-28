@@ -13,19 +13,9 @@ public class ObjectGeneration : MonoBehaviour
     public GameObject tanque;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (timer <= 0f)
-        {
-            timer = 5f;
-            GenerateObjects();
-        }
-        GeneratorTimer();
-    }
-
-    void GeneratorTimer()
-    {
-        timer -= Time.deltaTime;
+        InvokeRepeating("GenerateObjects", 0, 4);
     }
 
     void GenerateObjects()
