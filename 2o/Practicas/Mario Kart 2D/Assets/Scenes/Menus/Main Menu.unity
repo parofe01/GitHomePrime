@@ -2560,7 +2560,7 @@ MonoBehaviour:
     EnableNetworkLogs: 1
     OldPrefabList: []
   RunInBackground: 1
-  LogLevel: 0
+  LogLevel: 1
 --- !u!4 &432604361
 Transform:
   m_ObjectHideFlags: 0
@@ -4195,6 +4195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuState: 0
+  networkManager: {fileID: 432604360}
   mPanelPolicies: {fileID: 1710064635}
   mPanelMain: {fileID: 567247684}
   mPanelHost: {fileID: 1568585125}
@@ -6607,7 +6608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1543716402
 RectTransform:
   m_ObjectHideFlags: 0

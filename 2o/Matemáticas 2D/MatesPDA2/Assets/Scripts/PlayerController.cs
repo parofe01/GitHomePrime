@@ -9,16 +9,13 @@ public class PlayerController : MonoBehaviour
 {
     public float playerSpeed;
     public float playerVida;
-    private float tiempoVivo = 0;
 
     float inputHorizontal;
     float inputVertical;
 
     Rigidbody rb;
     public GameObject GameOver;
-    public Text textoVida;
-    public Text textoTiempo;
-    public Text textoTiempoOver;
+    public Text TextoVida;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         Inputs();
         UpdateCanvas();
-        tiempoVivo += Time.deltaTime;
         if (playerVida <= 0)
         {
             Destroy(gameObject);
@@ -42,10 +38,10 @@ public class PlayerController : MonoBehaviour
 
     void Inputs()
     {
-        // Movimiento 
-
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
+
+        // Movimiento a derecha
         
         if (transform.position.x <= 4.5 && inputHorizontal > 0)
         {
@@ -59,7 +55,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed, Space.World);
         }
-        if (transform.position.z >= -3 && inputVertical < 0)
+        if (transform.position.z >= -4.5 && inputVertical < 0)
         {
             transform.Translate(Vector3.back * Time.deltaTime * playerSpeed, Space.World);
         }
@@ -67,8 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateCanvas()
     {
-        textoVida.text = "VIDA: " + playerVida;
-        textoTiempo.text = "TIEMPO: " + ((int)tiempoVivo);
+        TextoVida.text = "VIDA: " + playerVida;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -101,9 +96,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        textoTiempo.gameObject.SetActive(false);
-        textoVida.gameObject.SetActive(false);
-        textoTiempoOver.text = "Viviste " + ((int)tiempoVivo) + " segundos";
         GameOver.SetActive(true);
         Time.timeScale = 0f;
     }

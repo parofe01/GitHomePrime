@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Enemies
-  - Player
+  - 
+  - 
   - 
   - 
   - 
@@ -38,33 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: B8
-    uniqueID: 1417199309
+  - name: Background 6
+    uniqueID: 3588026711
     locked: 0
-  - name: B7
-    uniqueID: 1917075481
+  - name: Background 5
+    uniqueID: 94442213
     locked: 0
-  - name: B6
-    uniqueID: 3393969261
+  - name: Background 4
+    uniqueID: 3277123801
     locked: 0
-  - name: B5
-    uniqueID: 2809010883
+  - name: Background 3
+    uniqueID: 3464567791
     locked: 0
-  - name: B4
-    uniqueID: 1550462557
+  - name: Background 2
+    uniqueID: 653862113
     locked: 0
-  - name: B3
-    uniqueID: 282866317
+  - name: Background 1
+    uniqueID: 3446550295
     locked: 0
-  - name: B2
-    uniqueID: 1978415789
-    locked: 0
-  - name: B1
-    uniqueID: 1728491637
+  - name: Foreground 1
+    uniqueID: 1823542265
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: F1
-    uniqueID: 2744195857
     locked: 0
