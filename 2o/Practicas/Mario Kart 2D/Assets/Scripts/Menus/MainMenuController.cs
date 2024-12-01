@@ -15,7 +15,6 @@ public class MainMenuControllers : NetworkBehaviour
     public MenuState menuState;
 
     // GameObjects
-    public NetworkManager networkManager; // Referencia al NetworkManager para manejar la red
     public GameObject mPanelPolicies;     // Panel que muestra las políticas al inicio
     public GameObject mPanelMain;         // Panel principal del menú
     public GameObject mPanelHost;         // Panel que muestra las opciones para ser host
@@ -40,8 +39,6 @@ public class MainMenuControllers : NetworkBehaviour
         mPanelHelp.SetActive(false);       
         mLobby.SetActive(false);
 
-        // Establece el NetworkManager como Singleton (único en la escena)
-        networkManager.SetSingleton();
         SetIpPort("127.0.0.1", 8123);
     }
 
@@ -121,7 +118,7 @@ public class MainMenuControllers : NetworkBehaviour
     public void ClickStartHosting()
     {
         LoadLobby();                 
-        networkManager.StartHost();  // Inicia el host (servidor) en el NetworkManager
+        NetworkManager.Singleton.StartHost();  // Inicia el host (servidor) en el NetworkManager
         SetMenuState(MenuState.LobbyMoving);
     }
 
@@ -130,7 +127,7 @@ public class MainMenuControllers : NetworkBehaviour
         
 
         // Intentar iniciar la conexión
-        networkManager.StartClient();
+        NetworkManager.Singleton.StartClient();
         
     }
 

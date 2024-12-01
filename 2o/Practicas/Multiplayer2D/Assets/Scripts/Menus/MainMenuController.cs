@@ -12,7 +12,7 @@ public class MainMenuControllers : MonoBehaviour
 
 
     // GameObjects
-    public NetworkManager networkManager;
+    // public NetworkManager networkManager;
     public GameObject mPanelMain;
     public GameObject mPanelHost;
     public GameObject mPanelClient;
@@ -56,13 +56,13 @@ public class MainMenuControllers : MonoBehaviour
     {
 
         mPanelHost.SetActive(false);
-        networkManager.StartHost();
+        NetworkManager.Singleton.StartHost();
     }
 
     public void ClickStartClient()
     {
 
         mPanelClient.SetActive(false);
-        networkManager.StartClient();
+        NetworkManager.Singleton.StartClient();
     }
 }
