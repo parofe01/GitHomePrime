@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
         if (forwardAxis)
         {
             Debug.Log("Movimiento");
-            transform.eulerAngles = new Vector3(90, transform.rotation.y + 1000 * Time.deltaTime, 0);
+            transform.eulerAngles += new Vector3(10, 0, 0) * Time.deltaTime;
         }
     }
 }
