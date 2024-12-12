@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
+using UnityEditor.SearchService;
 
 public class PlayerController : MonoBehaviour
 {
@@ -64,6 +66,19 @@ public class PlayerController : MonoBehaviour
     private void UpdateCanvas()
     {
         TextoVida.text = "VIDA: " + playerVida;
+    }
+
+    void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    void GoToRevive()
+    {
+        SceneManager.LoadScene("Revive");
+    }
+    void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnTriggerEnter(Collider other)

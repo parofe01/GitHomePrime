@@ -8,8 +8,9 @@ public class PlayerScript : MonoBehaviour
 {
     public enum States { idle, run, jump, finishJump, falling, attack, bow, hurt, die }
     public States mystate;
-    public float myspeed;
+    public float myspeed, jumpForce;
     public GameObject arrowObject;
+    public GameObject puntoFinal;
 
     private Animator myanimator;
     private Rigidbody2D myRigid;
@@ -39,6 +40,10 @@ public class PlayerScript : MonoBehaviour
         PosX = transform.position.x;
         PosY = transform.position.y;
 
+        StateMachine();
+    }
+    void StateMachine()
+    {
         switch (mystate)
         {
             case States.idle:
@@ -73,11 +78,10 @@ public class PlayerScript : MonoBehaviour
                 break;
         }
     }
-
     private void Idle()
     {
         myanimator.Play("Player_Idle");
-
+        if (GroundCheckScript.tocoSuelo) myRigid.velocity = Vector2.zero;
 
         ///////////////////////////////
 
@@ -85,6 +89,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonDown("Fire1")) SetState(States.attack);
         if (Input.GetButtonDown("Fire2")) SetState(States.bow);
         if (Input.GetButtonDown("Jump")) SetState(States.jump);
+        if (myRigid.velocity.y < 0) SetState(States.falling);
     }
 
     private void Run()
@@ -101,11 +106,13 @@ public class PlayerScript : MonoBehaviour
             transform.Translate(Vector3.left * Time.deltaTime * myspeed, Space.World);
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
+        if (myRigid.velocity.y < 0) SetState(States.falling);
 
 
         ///////////////////////////////
 
         if (Input.GetAxisRaw("Horizontal") == 0) SetState(States.idle);
+        if (Input.GetButtonDown("Jump")) SetState(States.jump);
         if (Input.GetButtonDown("Fire1")) SetState(States.attack);
         if (Input.GetButtonDown("Fire2")) SetState(States.bow);
     }
@@ -114,24 +121,31 @@ public class PlayerScript : MonoBehaviour
     {
         myanimator.Play("Player_Jump");
         myRigid.velocity = new Vector2 (0, 8);
-        if (Input.GetButtonDown("Jump"))
+
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            SetState(States.finishJump);
+            myRigid.velocity = new Vector2(myspeed, jumpForce);
         }
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            myRigid.velocity = new Vector2(-myspeed, jumpForce);
+        }
+        if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+            myRigid.velocity = new Vector2(0, jumpForce);
+        }
+        SetState(States.finishJump);
     }
 
     private void FinishJump()
     {
-        if (myRigid.velocity.y < 0)
-        {
-            SetState(States.falling);
-        }
+        if (myRigid.velocity.y < 0) SetState(States.falling);
     }
 
     private void Falling()
     {
-        myanimator.Play("Player_Fall");
-        if (myRigid.velocity.y > 0)
+        myanimator.Play("Player_Falling");
+        if (myRigid.velocity.y == 0)
         {
             SetState(States.idle);
         }

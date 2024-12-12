@@ -63,7 +63,7 @@ TextureImporter:
       213: -8961429610052164160
     second: shrub_19
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -80,11 +80,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -123,6 +124,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
@@ -135,6 +137,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -147,6 +150,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -159,6 +163,59 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -595,29 +652,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      shrub_0: 2364855247512024993
+      shrub_1: -965880573565008923
+      shrub_10: -8667336366533991562
+      shrub_11: 3926413341001247570
+      shrub_12: 3673667773231269884
+      shrub_13: -4058599349170950532
+      shrub_14: 2489094778090671066
+      shrub_15: 6672401528744452999
+      shrub_16: 5426327922367845357
+      shrub_17: 3289479755581260551
+      shrub_18: -1050943515851555311
+      shrub_19: -8961429610052164160
+      shrub_2: -6771015500505508564
       shrub_3: -5279194954186533494
       shrub_4: -3558373281968235215
-      shrub_16: 5426327922367845357
-      shrub_6: -5419165172985384506
-      shrub_14: 2489094778090671066
-      shrub_11: 3926413341001247570
-      shrub_0: 2364855247512024993
-      shrub_13: -4058599349170950532
-      shrub_9: 7530883340383332569
-      shrub_17: 3289479755581260551
-      shrub_2: -6771015500505508564
-      shrub_7: -89695505864112151
-      shrub_19: -8961429610052164160
-      shrub_10: -8667336366533991562
-      shrub_18: -1050943515851555311
-      shrub_8: 5965572231045808114
-      shrub_1: -965880573565008923
       shrub_5: 5993868571160197527
-      shrub_12: 3673667773231269884
-      shrub_15: 6672401528744452999
-  spritePackingTag: 
+      shrub_6: -5419165172985384506
+      shrub_7: -89695505864112151
+      shrub_8: 5965572231045808114
+      shrub_9: 7530883340383332569
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -7,8 +7,9 @@ public class DamageScriptEnemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         
-        if (col.gameObject.layer != 1 << 6)
+        if (col.gameObject.name == "Player")
         {
+            
             col.gameObject.GetComponent<PlayerScript>().TakeDamage();
            
 
