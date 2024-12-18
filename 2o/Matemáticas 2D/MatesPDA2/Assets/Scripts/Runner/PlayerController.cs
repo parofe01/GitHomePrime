@@ -9,20 +9,34 @@ using UnityEditor.SearchService;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum State { alive, dead };
+    public State state;
     public float playerSpeed;
     public float playerVida;
+    public float playerTiempo;
 
     float inputHorizontal;
     float inputVertical;
 
     Rigidbody rb;
+    public GameObject Canvas;
     public GameObject GameOver;
-    public Text TextoVida;
-
+    public GameObject TextVida;
+    public Text LabelVida;
+    public GameObject TextTiempo;
+    public Text LabelTiempo;
     // Start is called before the first frame update
     void Start()
     {
+        Canvas = GameObject.Find("Canvas");
+        GameOver = GameObject.Find("GameOver");
+        TextVida = GameObject.Find("Text Vida");
+        LabelVida = TextVida.GetComponent<Text>();
+        TextTiempo = GameObject.Find("Text Tiempo");
+        LabelTiempo = TextVida.GetComponent<Text>();
+        SetState(State.alive);
         playerVida = 5;
+        playerTiempo = 0;
         rb = GetComponent<Rigidbody>();
         GameOver.SetActive(false);
     }
@@ -30,14 +44,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Inputs();
-        UpdateCanvas();
+        if (state == State.alive)
+        {
+            Inputs();
+            UpdateCanvas();
+        }
         if (playerVida <= 0)
         {
             Destroy(gameObject);
         }
     }
 
+    void SetState(State s)
+    {
+        state = s;
+    }
     void Inputs()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
@@ -65,7 +86,8 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateCanvas()
     {
-        TextoVida.text = "VIDA: " + playerVida;
+        LabelVida.text = "VIDA: " + playerVida;
+        LabelTiempo.text = "TIEMPO " + playerTiempo;
     }
 
     void GoToMainMenu()

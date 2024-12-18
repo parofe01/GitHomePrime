@@ -8,30 +8,38 @@ public class ObjectGeneration : MonoBehaviour
     public float velocidadCubo;
     float timer = 0f;
 
+    public GameObject player;
     public GameObject cube;
     public GameObject powerUp;
     public GameObject tanque;
 
+    private PlayerController playerController;
+
     // Update is called once per frame
     void Start()
     {
+        playerController = player.GetComponent<PlayerController>();
+        Instantiate<GameObject>(player);
         InvokeRepeating("GenerateObjects", 0, 4);
     }
 
     void GenerateObjects()
     {
-        float perlinHeight;
-        for (float x = -4.5f; x < 5.5; x++)
+        if(playerController.state == PlayerController.State.alive)
         {
-            perlinHeight = CalcularAltura(x, 10);
-            if (perlinHeight < 0.3)
+            float perlinHeight;
+            for (float x = -4.5f; x < 5.5; x++)
             {
-                Vector3 pos = new Vector3(x, 0.5f, 15);
-                Instantiate<GameObject>(cube, pos, Quaternion.identity);
-            }
-            else
-            {
-                GenerarExtras(x);
+                perlinHeight = CalcularAltura(x, 10);
+                if (perlinHeight < 0.3)
+                {
+                    Vector3 pos = new Vector3(x, 0.5f, 15);
+                    Instantiate<GameObject>(cube, pos, Quaternion.identity);
+                }
+                else
+                {
+                    GenerarExtras(x);
+                }
             }
         }
     }
