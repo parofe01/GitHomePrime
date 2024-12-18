@@ -286,16 +286,6 @@ RectTransform:
   m_Children:
   - {fileID: 423684194}
   - {fileID: 1921867411}
-  - {fileID: 1891907283}
-  - {fileID: 1103957374}
-  - {fileID: 1785527966}
-  - {fileID: 645989167}
-  - {fileID: 1321345031}
-  - {fileID: 1013276302}
-  - {fileID: 1429629098}
-  - {fileID: 935022810}
-  - {fileID: 300974031}
-  - {fileID: 1380721796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -373,7 +363,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 8
+  m_Text: '?'
 --- !u!222 &81792228
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -414,11 +404,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1125543654}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 720, y: 200}
+  m_AnchoredPosition: {x: 350, y: -200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300974032
@@ -505,12 +495,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -758,11 +748,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 814129798}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: -200}
+  m_AnchoredPosition: {x: 350, y: 200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &645989168
@@ -849,12 +839,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1023,7 +1013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: '?'
 --- !u!222 &676816520
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1262,7 +1252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: '?'
 --- !u!222 &814129800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1341,7 +1331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: '?'
 --- !u!222 &905001528
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1443,11 +1433,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 81792226}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -200}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935022811
@@ -1534,12 +1524,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1576,11 +1566,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1362485739}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: -700, y: -200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013276303
@@ -1667,12 +1657,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1839,7 +1829,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: '?'
 --- !u!222 &1087442457
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1880,11 +1870,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1878784992}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -720, y: -200}
+  m_AnchoredPosition: {x: -350, y: 200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103957375
@@ -1971,12 +1961,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2051,7 +2041,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 9
+  m_Text: '?'
 --- !u!222 &1125543656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2130,7 +2120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 7
+  m_Text: '?'
 --- !u!222 &1193959824
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2171,11 +2161,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 676816518}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 700, y: 200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321345032
@@ -2262,12 +2252,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2342,7 +2332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 6
+  m_Text: '?'
 --- !u!222 &1362485741
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2416,12 +2406,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2477,11 +2467,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1087442455}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 720, y: -200}
+  m_AnchoredPosition: {x: 700, y: -200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1429629097
@@ -2516,11 +2506,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1193959822}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 200}
+  m_AnchoredPosition: {x: -350, y: -200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1429629099
@@ -2607,12 +2597,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2782,11 +2772,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 905001526}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: 200}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785527967
@@ -2873,12 +2863,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: ClickEasy
-        m_Mode: 1
+        m_MethodName: SelectedButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3086,7 +3076,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: '?'
 --- !u!222 &1878784994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3127,11 +3117,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2110896100}
-  m_Father: {fileID: 76036007}
+  m_Father: {fileID: 1921867411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -720, y: 200}
+  m_AnchoredPosition: {x: -700, y: 200}
   m_SizeDelta: {x: 161.5887, y: 163.0716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891907284
@@ -3223,7 +3213,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3240,7 +3230,7 @@ GameObject:
   - component: {fileID: 1921867413}
   - component: {fileID: 1921867412}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Panel Minigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3257,7 +3247,17 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1891907283}
+  - {fileID: 1103957374}
+  - {fileID: 1785527966}
+  - {fileID: 645989167}
+  - {fileID: 1321345031}
+  - {fileID: 1013276302}
+  - {fileID: 1429629098}
+  - {fileID: 935022810}
+  - {fileID: 300974031}
+  - {fileID: 1380721796}
   m_Father: {fileID: 76036007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3454,7 +3454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: '?'
 --- !u!222 &2110896102
 CanvasRenderer:
   m_ObjectHideFlags: 0
