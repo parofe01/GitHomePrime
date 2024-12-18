@@ -823,8 +823,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: SelectedButton
-        m_Mode: 3
+        m_MethodName: OnWin
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1622,6 +1622,13 @@ MonoBehaviour:
   - {fileID: 300974034}
   - {fileID: 1380721793}
   buttonsColor: []
+  numbersChecked: 00000000000000000000
+  rightIndex: 0
+  minNum: 0
+  maxNum: 9
+  centerNum: 0
+  marcadorMin: 0
+  marcadorMax: 0
 --- !u!4 &914385863
 Transform:
   m_ObjectHideFlags: 0
@@ -3788,8 +3795,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 914385862}
         m_TargetAssemblyTypeName: IAScript, Assembly-CSharp
-        m_MethodName: SelectedButton
-        m_Mode: 3
+        m_MethodName: OnLose
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

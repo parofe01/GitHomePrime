@@ -129,11 +129,11 @@ public class IAScript : MonoBehaviour
         }
     }
 
-    void OnWin()
+    public void OnWin()
     {
         SceneManager.LoadScene("Runner");
     }
-    void OnLose()
+    public void OnLose()
     {
         SceneManager.LoadScene("MainMenu");
     }
@@ -197,8 +197,8 @@ public class IAScript : MonoBehaviour
         UINotTouchable();
 
         centerNum = (int)( maxNum + minNum ) / 2;
-        // Este while es para prevenir que el codigo que bloqueé
-        // si la ia intenta comprobar una casilla que ya esté
+        // Este while es para prevenir que el codigo que bloqueï¿½
+        // si la ia intenta comprobar una casilla que ya estï¿½
         // comprobada por mi
         while (numbersChecked[centerNum])
         {
@@ -237,13 +237,46 @@ public class IAScript : MonoBehaviour
     {
         UINotTouchable();
 
-        if (minNum < maxNum)
+        
+        marcadorMin = minNum + ( maxNum - minNum ) / 3;
+        marcadorMax = maxNum - ( maxNum - minNum ) / 3;
+
+        if ( marcadorMin == rightIndex )
         {
-            marcadorMin = minNum ( maxNum - minNum );
+            centerNum = marcadorMin;
+            numbersChecked[marcadorMin] = true;
+            buttonsColor[centerNum].color = Color.green;
+            SetWinner(Winner.ia);
         }
-
-
-
+        else if ( marcadorMax == rightIndex )
+        {
+            centerNum = marcadorMax;
+            numbersChecked[marcadorMax] = true;
+            buttonsColor[centerNum].color = Color.green;
+            SetWinner(Winner.ia);
+        } 
+        else if ( rightIndex < marcadorMin )
+        {
+            maxNum = marcadorMin - 1;
+            centerNum = marcadorMin;
+            buttonsColor[centerNum].color = Color.red;
+        }
+        else if ( rightIndex > marcadorMax )
+        {
+            maxNum = marcadorMax + 1;
+            centerNum = marcadorMin;
+            buttonsColor[centerNum].color = Color.red;
+        }
+        else 
+        {
+            minNum = marcadorMin + 1;
+            maxNum = marcadorMax - 1;
+            centerNum = marcadorMin;
+            buttonsColor[centerNum].color = Color.red;
+        }
+    
+        numbersChecked[centerNum] = true;
+    
         UITouchable();
         iaTurn = false;
     }

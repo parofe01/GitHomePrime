@@ -6,7 +6,7 @@ public class ObjectGeneration : MonoBehaviour
 {
     public float multiplicadorDesplazamiento;
     public float velocidadCubo;
-    float timer = 0f;
+    //float timer = 0f;
 
     public GameObject player;
     public GameObject cube;
