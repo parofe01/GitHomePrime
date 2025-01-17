@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
-using UnityEditor.SearchService;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,26 +18,49 @@ public class PlayerController : MonoBehaviour
     float inputVertical;
 
     Rigidbody rb;
+    Animator animator;
     public GameObject Canvas;
     public GameObject GameOver;
     public GameObject TextVida;
     public Text LabelVida;
     public GameObject TextTiempo;
     public Text LabelTiempo;
+    public GameObject Dif;
+    public Dificulty DifScript;
+
+    public GameObject CamCP;
+    public GameObject CamFB;
+
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1.0f;
         Canvas = GameObject.Find("Canvas");
         GameOver = GameObject.Find("GameOver");
         TextVida = GameObject.Find("Text Vida");
         LabelVida = TextVida.GetComponent<Text>();
         TextTiempo = GameObject.Find("Text Tiempo");
-        LabelTiempo = TextVida.GetComponent<Text>();
+        LabelTiempo = TextTiempo.GetComponent<Text>();
+        Dif = GameObject.Find("Dificulty");
+        DifScript = Dif.GetComponent<Dificulty>();
+
         SetState(State.alive);
         playerVida = 5;
         playerTiempo = 0;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         GameOver.SetActive(false);
+
+        if (DifScript.dificulty)
+        {
+            CamCP.SetActive(true);
+            CamFB.SetActive(false);
+        }
+        else
+        {
+            CamCP.SetActive(false);
+            CamFB.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -48,10 +70,11 @@ public class PlayerController : MonoBehaviour
         {
             Inputs();
             UpdateCanvas();
+            playerTiempo += Time.deltaTime;
         }
         if (playerVida <= 0)
         {
-            Destroy(gameObject);
+            GoToGameOver();
         }
     }
 
@@ -69,16 +92,22 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x <= 4.5 && inputHorizontal > 0)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed, Space.World);
+            animator.Play("player_sw_right");
         }
         if (transform.position.x >= -4.5 && inputHorizontal < 0)
         {
             transform.Translate(Vector3.left * Time.deltaTime * playerSpeed, Space.World);
+            animator.Play("player_sw_left");
         }
-        if (transform.position.z <= 4.5 && inputVertical > 0)
+        if (inputHorizontal == 0)
+        {
+            animator.Play("player_idle");
+        }
+        if (inputVertical > 0)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed, Space.World);
         }
-        if (transform.position.z >= -4.5 && inputVertical < 0)
+        if (inputVertical < 0)
         {
             transform.Translate(Vector3.back * Time.deltaTime * playerSpeed, Space.World);
         }
@@ -87,20 +116,13 @@ public class PlayerController : MonoBehaviour
     private void UpdateCanvas()
     {
         LabelVida.text = "VIDA: " + playerVida;
-        LabelTiempo.text = "TIEMPO " + playerTiempo;
+        LabelTiempo.text = "TIEMPO " + (int)playerTiempo;
     }
 
-    void GoToMainMenu()
+    void GoToGameOver()
     {
-        SceneManager.LoadScene("MainMenu");
-    }
-    void GoToRevive()
-    {
-        SceneManager.LoadScene("Revive");
-    }
-    void ResetLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameOver.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -116,24 +138,9 @@ public class PlayerController : MonoBehaviour
             playerVida--;
             Destroy(other.gameObject);
         }
-
-        if (other.CompareTag("Torret"))
+        if (other.CompareTag("Indestructible"))
         {
-            Destroy(other.gameObject);
+            playerVida = 0;
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Wall"))
-        {
-            rb.AddForceAtPosition(new Vector3(0, 0, -0.1f), transform.position, ForceMode.Impulse);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        GameOver.SetActive(true);
-        Time.timeScale = 0f;
     }
 }

@@ -49,7 +49,7 @@ public class ObjectGeneration : MonoBehaviour
         float value = Random.Range(0f, 100f);
         if (value <= 5)
         {
-            Vector3 pos = new Vector3(x, 0f, 15);
+            Vector3 pos = new Vector3(x, 0.25f, 15);
             Instantiate<GameObject>(tanque, pos, Quaternion.identity);
         }
         if (value >= 95)

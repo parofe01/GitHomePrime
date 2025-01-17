@@ -128,10 +128,10 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger");
+        Debug.Log("Trigger: " + other);
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
+        Debug.Log("Collision: " + collision);
     }
 }

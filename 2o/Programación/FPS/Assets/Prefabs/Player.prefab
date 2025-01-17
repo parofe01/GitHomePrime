@@ -152,7 +152,6 @@ GameObject:
   - component: {fileID: 6324726276953219302}
   - component: {fileID: 8242454855483573521}
   - component: {fileID: 6565328287066874196}
-  - component: {fileID: 8386780304924722865}
   m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
@@ -225,29 +224,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8386780304924722865
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8477836880948061386}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &9147582699779526131
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +235,7 @@ GameObject:
   - component: {fileID: 1525094733560010488}
   - component: {fileID: 5590448881088128618}
   - component: {fileID: -1766227513004273214}
-  - component: {fileID: 5327220101835702030}
+  - component: {fileID: -5055196379344092030}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -277,7 +253,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -40, y: 1, z: -45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.33, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 291391318036390484}
@@ -333,8 +309,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 1
---- !u!136 &5327220101835702030
-CapsuleCollider:
+--- !u!65 &-5055196379344092030
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -351,10 +327,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5286139323223347061
 PrefabInstance:

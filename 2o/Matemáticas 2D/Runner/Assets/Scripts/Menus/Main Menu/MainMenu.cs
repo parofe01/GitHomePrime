@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Easy()
     {
-        
+        Dificulty.Instance.dificulty = false; // Establece la dificultad como fácil
+        GoToRunner();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Hard()
     {
-        
+        Dificulty.Instance.dificulty = true; // Establece la dificultad como difícil
+        GoToRunner();
     }
 
     public void GoToRunner()
