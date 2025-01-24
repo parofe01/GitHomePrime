@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
+using UnityEngine.UIElements;
 
 public class Weapon : MonoBehaviour
 {
@@ -22,7 +24,7 @@ public class Weapon : MonoBehaviour
 
     public RaycastHit hit;
 
-    public enum Type { Pistol, AR1 };
+    public enum Type { Pistol, AR1, Shootgun };
     public Type type;
 
     public GameObject bullet;
@@ -53,8 +55,12 @@ public class Weapon : MonoBehaviour
             case Type.AR1:
                 animator.Play("ar1(automatic rifle)_hands_Fire_ar1(automatic rifle)");
                 break;
+            case Type.Shootgun:
+                animator.Play("shotgun1_hands_Fire_shotgun1");
+                break;
         }
     }
+    
 
     void AniReloading()
     {
@@ -65,6 +71,9 @@ public class Weapon : MonoBehaviour
                 break;
             case Type.AR1:
                 animator.Play("ar1(automatic rifle)_hands_Reload_ar1(automatic rifle)");
+                break;
+            case Type.Shootgun:
+                animator.Play("shotgun1_hands_ReloadNoAmmo_shotgun1");
                 break;
         }
     }
@@ -95,7 +104,14 @@ public class Weapon : MonoBehaviour
             if (Physics.Raycast(shootPoint.transform.position, shootPoint.transform.forward, out hit))
             {
                 Debug.Log("Impacto con: " + hit.collider.name);
+                if (hit.collider.name == "Enemy")
+                {
+                    GameObject enemy = hit.collider.gameObject;
+                    IA_Soldado ene = enemy.GetComponent<IA_Soldado>();
+                    ene.health -= 15;
+                }
             }
+        
         }
     }
 
@@ -124,8 +140,15 @@ public class Weapon : MonoBehaviour
             Vector3 rayDirection = (shootPoint.transform.rotation * dispersion) * Vector3.forward;
             if (Physics.Raycast(shootPoint.transform.position, rayDirection, out hit))
             {
-                Debug.Log("Impacto con: " + hit.collider.name);
+                Debug.Log("Impacto con: " + hit.collider.name); 
+                if (hit.collider.name == "Enemy")
+                {
+                    GameObject enemy = hit.collider.gameObject;
+                    IA_Soldado ene = enemy.GetComponent<IA_Soldado>();
+                    ene.health -= 15;
+                }
             }
+        
 
             // Dibuja el rayo para depuración
             Debug.DrawRay(shootPoint.transform.position, rayDirection * 50, Color.red, 2f);
@@ -133,26 +156,38 @@ public class Weapon : MonoBehaviour
     }
 
 
-    //public void ShotgunShoot()
-    //{
-    //    if (fireRateCooldown <= 0 && bullets > 0 && !reloading)
-    //    {
-    //        fireRateCooldown = fireRate;
-    //        bullets--;
+    public void ShotgunShoot()
+    {
+        AniShooting();
+        if (fireRateCooldown <= 0 && bullets > 0 && !reloading)
+        {
+            fireRateCooldown = fireRate;
+            bullets--;
 
 
-    //        for (int i = 0; i < 15; i++)
-    //        {
-    //            Quaternion dispersion = Quaternion.Euler(Random.Range(-bulletDispersion, bulletDispersion),
-    //                                            Random.Range(-bulletDispersion, bulletDispersion),
-    //                                            Random.Range(-bulletDispersion, bulletDispersion));
-    //            Instantiate(pellet, shootPoint.transform.position, transform.rotation * dispersion);
+            for (int i = 0; i < 15; i++)
+            {
+                Quaternion dispersion = Quaternion.Euler(Random.Range(-bulletDispersion, bulletDispersion),
+                                                Random.Range(-bulletDispersion, bulletDispersion),
+                                                Random.Range(-bulletDispersion, bulletDispersion));
+                Vector3 rayDirection = (shootPoint.transform.rotation * dispersion) * Vector3.forward;
+                if (Physics.Raycast(shootPoint.transform.position, rayDirection, out hit))
+                {
+                    Debug.Log("Impacto con: " + hit.collider.name);
+                    if (hit.collider.name == "Enemy")
+                    {
+                        GameObject enemy = hit.collider.gameObject;
+                        IA_Soldado ene = enemy.GetComponent<IA_Soldado>();
+                        ene.health -= 10;
+                    }
+                }
+                Instantiate(bullet, shootPoint.transform.position, transform.rotation * dispersion);
+                Debug.DrawRay(shootPoint.transform.position, rayDirection * 50, Color.red, 2f);
+            }
 
-    //        }
 
-
-    //    }
-    //}
+        }
+    }
 
     public void Reload()
     {
@@ -185,6 +220,43 @@ public class Weapon : MonoBehaviour
             fireRateCooldown -= Time.deltaTime;
         }
 
+    }
+
+    public void EnemyShoot()
+    {
+        currentDispersion = maxDispersion;
+        if (fireRateCooldown <= 0)
+        {
+
+
+            fireRateCooldown = fireRate;
+
+            // Aplica dispersión al disparo
+            Quaternion dispersion = Quaternion.Euler(
+                Random.Range(-currentDispersion, currentDispersion),
+                Random.Range(-currentDispersion, currentDispersion),
+                0f
+            );
+
+            // Instancia la bala con dispersión
+            Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation * dispersion);
+
+            // Realiza un Raycast con dispersión
+            Vector3 rayDirection = (shootPoint.transform.rotation * dispersion) * Vector3.forward;
+            if (Physics.Raycast(shootPoint.transform.position, rayDirection, out hit))
+            {
+                Debug.Log("Impacto con: " + hit.collider.name);
+                if (hit.collider.name == "Player")
+                {
+                    GameObject player = hit.collider.gameObject;
+                    PlayerController pla = player.GetComponent<PlayerController>();
+                    pla.health -= 15;
+                }
+
+                // Dibuja el rayo para depuración
+                Debug.DrawRay(shootPoint.transform.position, rayDirection * 50, Color.red, 2f);
+            }
+        }
     }
 
 }

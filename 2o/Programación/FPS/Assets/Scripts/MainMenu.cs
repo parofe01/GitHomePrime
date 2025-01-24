@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void ClickStart()
     {
-        LoadScene("Scenario1");
+        LoadScene("Demo_SKS");
     }
     public void ClickExit()
     {

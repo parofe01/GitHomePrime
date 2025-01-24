@@ -6,7 +6,8 @@ using UnityEngine;
 public class GuiLevel : MonoBehaviour
 {
 
-    public Player player;
+    public GameObject player;
+    public PlayerController playerScript;
     //GUI
     public TMP_Text guiHealthAmount;
     public TMP_Text guiAmmoAmount;
@@ -16,41 +17,42 @@ public class GuiLevel : MonoBehaviour
     void Start()
     {
         // Con esto busco el primer objeto que tenga el script del jugador como componente
-        player = FindObjectOfType<Player>();
+        player = GameObject.Find("Player");
+        playerScript = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (player.weaponInUse)
+        switch (playerScript.weaponInUse)
         {
             case 0:
-                if (player.scriptPistol.reloadTime <= 0f)
+                if (playerScript.scriptPistol.reloadTime <= 0f)
                 {
                     guiReloadTime.text = "";
                 }
                 else
                 {
-                    guiReloadTime.text = "Reloading: " + player.scriptPistol.reloadTime.ToString("F" + 2);
+                    guiReloadTime.text = "Reloading: " + playerScript.scriptPistol.reloadTime.ToString("F" + 2);
                 }
-                guiAmmoAmount.text = player.scriptPistol.bullets.ToString();
+                guiAmmoAmount.text = playerScript.scriptPistol.bullets.ToString();
                 break;
             case 1:
-                if (player.scriptShotgun.reloadTime <= 0f)
+                if (playerScript.scriptShotgun.reloadTime <= 0f)
                 {
                     guiReloadTime.text = "";
                 }
                 else
                 {
-                    guiReloadTime.text = "Reloading: " + player.scriptShotgun.reloadTime.ToString("F" + 2);
+                    guiReloadTime.text = "Reloading: " + playerScript.scriptShotgun.reloadTime.ToString("F" + 2);
                 }
-                    guiAmmoAmount.text = player.scriptShotgun.bullets.ToString();
+                    guiAmmoAmount.text = playerScript.scriptShotgun.bullets.ToString();
                 break;
             default:
                 break;
         }
         
-        guiHealthAmount.text = player.health.ToString();
+        guiHealthAmount.text = playerScript.health.ToString();
 
     }
 }
