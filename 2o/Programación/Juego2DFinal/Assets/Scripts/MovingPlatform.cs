@@ -42,11 +42,11 @@ public class MovingPlatform : MonoBehaviour
         }
         else
         {
-            if ((posicion + desplazamiento) <= transform.position.x)
+            if ((posicion + desplazamiento) <= transform.position.y)
             {
                 speed *= -1;
             }
-            if ((posicion - desplazamiento) >= transform.position.x)
+            if ((posicion - desplazamiento) >= transform.position.y)
             {
                 speed *= -1;
             }
