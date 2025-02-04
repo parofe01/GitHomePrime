@@ -1,24 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public enum States { idle, run, jump, finishJump, falling, attack, bow, hurt, die }
+    public enum States { idle, run, jump, finishJump, falling, attack, hurt, die }
     public States mystate;
     public float myspeed, jumpForce;
     public GameObject arrowObject;
     public GameObject puntoFinal;
+    public GameObject groundCheck;
+    public GroundCheckScript GroundCheckScript;
 
     private Animator myanimator;
+    private SpriteRenderer sprite;
     private Rigidbody2D myRigid;
-    private int vidas;
+    public int health;
+
+    public Text textLabel;
 
     public static float PosX, PosY;
 
-    // Start is called before the first frame update
+    private bool canShoot = true;
+    private float shootCooldown = 0.5f;
+    private bool hasShotDuringAttack = false;
+
     private void Awake()
     {
         PosX = transform.position.x;
@@ -27,21 +35,21 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-
-        vidas = 3;
+        health = 2;
         myRigid = GetComponent<Rigidbody2D>();
         myanimator = GetComponent<Animator>();
         mystate = States.idle;
     }
 
-    // Update is called once per frame
     void Update()
     {
         PosX = transform.position.x;
         PosY = transform.position.y;
 
+        textLabel.text = "VIDA: " + health;
         StateMachine();
     }
+
     void StateMachine()
     {
         switch (mystate)
@@ -64,9 +72,6 @@ public class PlayerScript : MonoBehaviour
             case States.attack:
                 Attack();
                 break;
-            case States.bow:
-                Bow();
-                break;
             case States.hurt:
                 Hurt();
                 break;
@@ -78,23 +83,26 @@ public class PlayerScript : MonoBehaviour
                 break;
         }
     }
+
+    private void SetState(States s)
+    {
+        mystate = s;
+    }
+
     private void Idle()
     {
-        myanimator.Play("Player_Idle");
+        myanimator.Play("Idle-Animation");
         if (GroundCheckScript.tocoSuelo) myRigid.velocity = Vector2.zero;
 
-        ///////////////////////////////
-
         if (Input.GetAxisRaw("Horizontal") != 0) SetState(States.run);
-        if (Input.GetButtonDown("Fire1")) SetState(States.attack);
-        if (Input.GetButtonDown("Fire2")) SetState(States.bow);
+        if (Input.GetButtonDown("Fire1") && canShoot) SetState(States.attack);
         if (Input.GetButtonDown("Jump")) SetState(States.jump);
         if (myRigid.velocity.y < 0) SetState(States.falling);
     }
 
     private void Run()
     {
-        myanimator.Play("Player_Run");
+        myanimator.Play("Run-Animation");
 
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
@@ -108,19 +116,15 @@ public class PlayerScript : MonoBehaviour
         }
         if (myRigid.velocity.y < 0) SetState(States.falling);
 
-
-        ///////////////////////////////
-
         if (Input.GetAxisRaw("Horizontal") == 0) SetState(States.idle);
         if (Input.GetButtonDown("Jump")) SetState(States.jump);
-        if (Input.GetButtonDown("Fire1")) SetState(States.attack);
-        if (Input.GetButtonDown("Fire2")) SetState(States.bow);
+        if (Input.GetButtonDown("Fire1") && canShoot) SetState(States.attack);
     }
 
     private void Jump()
     {
-        myanimator.Play("Player_Jump");
-        myRigid.velocity = new Vector2 (0, 8);
+        myanimator.Play("Jump-Animation");
+        myRigid.velocity = new Vector2(0, 8);
 
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
@@ -144,8 +148,8 @@ public class PlayerScript : MonoBehaviour
 
     private void Falling()
     {
-        myanimator.Play("Player_Falling");
-        if (myRigid.velocity.y == 0)
+        myanimator.Play("Fall-Animation");
+        if (GroundCheckScript.tocoSuelo)
         {
             SetState(States.idle);
         }
@@ -153,58 +157,49 @@ public class PlayerScript : MonoBehaviour
 
     private void Attack()
     {
-        myanimator.Play("Player_Attack");
+        myanimator.Play("Shoot-Animation");
 
+        if (!hasShotDuringAttack && canShoot)
+        {
+            hasShotDuringAttack = true;
+            ShootArrow();
+            StartCoroutine(ShootCooldown());
+        }
 
-        ///////////////////////////////
-
-
-
+        if (myanimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
+            hasShotDuringAttack = false;
+            SetState(States.idle);
+        }
     }
-
-    private void Bow()
-    {
-        myanimator.Play("Player_Bow");
-
-
-        ///////////////////////////////
-
-
-    }
-
-    private void SetState(States newstate)
-    {
-        mystate = newstate;
-    }
-
 
     private void ShootArrow()
     {
         if (transform.eulerAngles.y == 0)
         {
-            Instantiate(arrowObject, transform.position + new Vector3(1, 0, 0), transform.rotation);
+            Instantiate(arrowObject, puntoFinal.transform.position + new Vector3(0, 0, 0), transform.rotation);
         }
         else
         {
-            Instantiate(arrowObject, transform.position - new Vector3(1, 0, 0), transform.rotation);
+            Instantiate(arrowObject, puntoFinal.transform.position - new Vector3(0, 0, 0), transform.rotation);
         }
-
-
     }
 
-
+    private IEnumerator ShootCooldown()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+    }
 
     public void Hurt()
     {
-        myanimator.Play("Player_Hurt");
-        
-        
-        
+        myanimator.Play("Hurt-Animation");
     }
 
     public void Die()
     {
-        myanimator.Play("Player_Die");
+        myanimator.Play("Die-Animation");
     }
 
     public void ResetLevel()
@@ -214,17 +209,14 @@ public class PlayerScript : MonoBehaviour
 
     public void TakeDamage()
     {
-        vidas--;
-        if (vidas > 0)
+        health--;
+        if (health > 0)
         {
             SetState(States.hurt);
-
         }
         else
         {
             SetState(States.die);
         }
-        
     }
-
 }

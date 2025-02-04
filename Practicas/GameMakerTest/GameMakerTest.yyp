@@ -8,7 +8,7 @@
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Conjuntos de casillas","folderPath":"folders/Conjuntos de casillas.yy","name":"Conjuntos de casillas","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Curvas de animación","folderPath":"folders/Curvas de animación.yy","name":"Curvas de animación","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -34,7 +34,12 @@
   },
   "name":"GameMakerTest",
   "resources":[
+    {"id":{"name":"o_GameManager","path":"objects/o_GameManager/o_GameManager.yy",},},
+    {"id":{"name":"o_Platform","path":"objects/o_Platform/o_Platform.yy",},},
+    {"id":{"name":"o_SakGirlAmarilla","path":"objects/o_SakGirlAmarilla/o_SakGirlAmarilla.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"s_Platform","path":"sprites/s_Platform/s_Platform.yy",},},
+    {"id":{"name":"s_SakGirlAmarilla","path":"sprites/s_SakGirlAmarilla/s_SakGirlAmarilla.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
