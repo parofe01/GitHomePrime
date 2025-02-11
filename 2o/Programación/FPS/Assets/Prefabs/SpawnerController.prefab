@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8170339385746739041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7469066841148111474}
+  - component: {fileID: 2685253002880765955}
+  - component: {fileID: 3920833457883383359}
+  m_Layer: 0
+  m_Name: SpawnerController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7469066841148111474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170339385746739041}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2685253002880765955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170339385746739041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c14072addcac9e41b185af843367301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundStart: 0
+  puertaEntrada: {fileID: 0}
+  puertaSalida: {fileID: 0}
+  player: {fileID: 0}
+  mosca: {fileID: 711584536143610285, guid: 3337666f306e3e447ba721f3c203441c, type: 3}
+  sansS2: {fileID: 4942230393172374455, guid: c6ea278a7cc813d4686e0e28ecc495d4, type: 3}
+  sansS3: {fileID: 4942230393172374455, guid: c22b6b9f53dfa784c8c6527d9353ddbc, type: 3}
+  dinger: {fileID: 7411596720454854349, guid: 4d04d8e605209c745b8cfa2d64cc9a49, type: 3}
+  bossponja: {fileID: 1903716495493099671, guid: 07826bde1b74b004d93474858ba38b3d,
+    type: 3}
+  checkPoints: {fileID: 0}
+  checkPointsList1: []
+  checkPointsList2: []
+  checkPointsList3: []
+--- !u!65 &3920833457883383359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170339385746739041}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
