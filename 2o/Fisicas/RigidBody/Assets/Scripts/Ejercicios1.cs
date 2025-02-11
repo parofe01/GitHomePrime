@@ -6,7 +6,7 @@ using UnityEngine;
 public class Ejercicios1 : MonoBehaviour
 {
 
-    public enum Exercice { Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho }
+    public enum Exercice { Cero, Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho }
     public Exercice ex;
 
     // Inputs
@@ -17,6 +17,9 @@ public class Ejercicios1 : MonoBehaviour
     // Components
     Rigidbody _Rigidbody;
 
+    // GameObjects
+    public GameObject _goPlayer;
+
     // Variables
     public float _vForce;
     public bool _vGrounded;
@@ -24,6 +27,7 @@ public class Ejercicios1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _goPlayer = GameObject.Find("Player");
         _Rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -48,6 +52,7 @@ public class Ejercicios1 : MonoBehaviour
     {
         switch (ex)
         {
+            case Exercice.Cero: break;
             case Exercice.Uno: Uno(); break;
             case Exercice.Dos: Dos(); break;
             case Exercice.Tres: Tres(); break;
@@ -110,10 +115,23 @@ public class Ejercicios1 : MonoBehaviour
     void Seis()
     {
 
+        _Rigidbody.AddForce((_goPlayer.transform.position - transform.position) * _vForce, ForceMode.Acceleration);
+        
     }
     void Siete()
     {
-
+        if (_IAxisV > 0)
+        {
+            _Rigidbody.AddForce(Vector3.forward * _vForce, ForceMode.Acceleration);
+        }
+        if (_IAxisV < 0)
+        {
+            _Rigidbody.AddForce(Vector3.back * _vForce / 2, ForceMode.Acceleration);
+        }
+        if (_IAxisH != 0)
+        {
+            _Rigidbody.AddTorque(new Vector3(0, _vForce * _IAxisH, 0), ForceMode.Force);
+        }
     }
 
     void Ocho()

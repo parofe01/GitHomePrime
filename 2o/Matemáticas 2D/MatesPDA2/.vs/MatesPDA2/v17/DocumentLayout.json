@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\assets\\scripts\\runner\\objectgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\runner\\objectgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|c:\\users\\parofe01\\documents\\github\\githomeprime\\2o\\matem\u00E1ticas 2d\\matespda2\\assets\\scripts\\menus\\revive\\iascript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menus\\revive\\iascript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\assets\\scripts\\runner\\objectmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\runner\\objectmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\assets\\scripts\\runner\\bulletgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\runner\\bulletgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\assets\\scripts\\runner\\detroyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\runner\\detroyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\assets\\scripts\\runner\\poweruprotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9D430C1-76C6-7864-5E27-73BEBF9641C0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\runner\\poweruprotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IAScript.cs",
+              "DocumentMoniker": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Menus\\Revive\\IAScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Menus\\Revive\\IAScript.cs",
+              "ToolTip": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Menus\\Revive\\IAScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Menus\\Revive\\IAScript.cs",
+              "ViewState": "AQIAAI4AAAAAAAAAAIBJwPEAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:52:41.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PowerUpRotation.cs",
+              "DocumentMoniker": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\PowerUpRotation.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Runner\\PowerUpRotation.cs",
+              "ToolTip": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\PowerUpRotation.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Runner\\PowerUpRotation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:04:56.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ObjectMovement.cs",
+              "DocumentMoniker": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\ObjectMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Runner\\ObjectMovement.cs",
+              "ToolTip": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\ObjectMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Runner\\ObjectMovement.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:04:55.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ObjectGeneration.cs",
+              "DocumentMoniker": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\ObjectGeneration.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Runner\\ObjectGeneration.cs",
+              "ToolTip": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\ObjectGeneration.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Runner\\ObjectGeneration.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAuwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:04:54.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Detroyer.cs",
+              "DocumentMoniker": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\Detroyer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Runner\\Detroyer.cs",
+              "ToolTip": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\Detroyer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Runner\\Detroyer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:04:54.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BulletGeneration.cs",
+              "DocumentMoniker": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\BulletGeneration.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Runner\\BulletGeneration.cs",
+              "ToolTip": "C:\\Users\\parofe01\\Documents\\GitHub\\GitHomePrime\\2o\\Matem\u00E1ticas 2D\\MatesPDA2\\Assets\\Scripts\\Runner\\BulletGeneration.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Runner\\BulletGeneration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:04:53.414Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
