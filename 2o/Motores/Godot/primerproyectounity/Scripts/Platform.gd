@@ -15,11 +15,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var _vPos = _vPosInicial.x + _vDesplazamiento
-	if _vPos >= position.x:
+
+	if _vPosInicial.x + _vDesplazamiento >= position.x:
 		_vSpeed *= -1
-	_vPos = _vPosInicial.x - _vDesplazamiento
-	if _vPos <= position.x:
+	
+	if _vPosInicial.x - _vDesplazamiento <= position.x:
 		_vSpeed *= -1
-	translate(Vector2.RIGHT * _vSpeed)
+	position.x += _vSpeed * delta
+
 	pass
