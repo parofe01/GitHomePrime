@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Ejercicios1 : MonoBehaviour
+public class Ejercicios1_8 : MonoBehaviour
 {
 
     public enum Exercice { Cero, Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho }
@@ -15,20 +15,22 @@ public class Ejercicios1 : MonoBehaviour
     bool _IJump;
 
     // Components
-    Rigidbody _Rigidbody;
+    Rigidbody _cRigidbody;
 
     // GameObjects
     public GameObject _goPlayer;
 
     // Variables
     public float _vForce;
+    public float _vVForce;
+    public float _vExploRadius;
     public bool _vGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
         _goPlayer = GameObject.Find("Player");
-        _Rigidbody = GetComponent<Rigidbody>();
+        _cRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -60,6 +62,7 @@ public class Ejercicios1 : MonoBehaviour
             case Exercice.Cinco: Cinco(); break;
             case Exercice.Seis: Seis(); break;
             case Exercice.Siete: Siete(); break;
+            case Exercice.Ocho: Ocho(); break;
 
         }
     }
@@ -68,7 +71,7 @@ public class Ejercicios1 : MonoBehaviour
     {
         if(_IAxisV > 0)
         {
-            _Rigidbody.AddForce(Vector3.forward * _vForce, ForceMode.Force);
+            _cRigidbody.AddForce(Vector3.forward * _vForce, ForceMode.Force);
         }
     }
 
@@ -76,70 +79,74 @@ public class Ejercicios1 : MonoBehaviour
     {
         if (_IAxisV != 0)
         {
-            _Rigidbody.AddForce(Vector3.forward * _IAxisV * _vForce, ForceMode.Force);
+            _cRigidbody.AddForce(Vector3.forward * _IAxisV * _vForce, ForceMode.Force);
         }
         if (_IAxisH != 0)
         {
-            _Rigidbody.AddForce(Vector3.right * _IAxisH * _vForce, ForceMode.Force);
+            _cRigidbody.AddForce(Vector3.right * _IAxisH * _vForce, ForceMode.Force);
         }
     }
     void Tres()
     {
         if ( _IAxisV > 0)
         {
-            _Rigidbody.AddForce(Vector3.forward * _vForce, ForceMode.Force);
+            _cRigidbody.AddForce(Vector3.forward * _vForce, ForceMode.Force);
         }
         if (_IAxisV < 0)
         {
-            _Rigidbody.AddForce(Vector3.back * _vForce/2, ForceMode.Force);
+            _cRigidbody.AddForce(Vector3.back * _vForce/2, ForceMode.Force);
         }
     }
     void Cuatro()
     {
         if (_IAxisV != 0)
         {
-            _Rigidbody.velocity = Vector3.forward * _IAxisV * _vForce;
+            _cRigidbody.linearVelocity = Vector3.forward * _IAxisV * _vForce;
         }
         if (_IAxisH != 0)
         {
-            _Rigidbody.velocity = Vector3.right * _IAxisH * _vForce;
+            _cRigidbody.linearVelocity = Vector3.right * _IAxisH * _vForce;
         }
     }
     void Cinco()
     {
         if (_IJump && _vGrounded)
         {
-            _Rigidbody.AddForce(Vector3.up * _vForce, ForceMode.Impulse);
+            _cRigidbody.AddForce(Vector3.up * _vForce, ForceMode.Impulse);
         }
     }
     void Seis()
     {
 
-        _Rigidbody.AddForce((_goPlayer.transform.position - transform.position) * _vForce, ForceMode.Acceleration);
+        _cRigidbody.AddForce((_goPlayer.transform.position - transform.position) * _vForce, ForceMode.Acceleration);
         
     }
     void Siete()
     {
-        if (_IAxisV > 0)
-        {
-            _Rigidbody.AddForce(Vector3.forward * _vForce, ForceMode.Acceleration);
-        }
-        if (_IAxisV < 0)
-        {
-            _Rigidbody.AddForce(Vector3.back * _vForce / 2, ForceMode.Acceleration);
-        }
         if (_IAxisH != 0)
         {
-            _Rigidbody.AddTorque(new Vector3(0, _vForce * _IAxisH, 0), ForceMode.Force);
+            _cRigidbody.AddTorque(new Vector3(0, _vForce * _IAxisH, 0), ForceMode.Force);
         }
     }
 
     void Ocho()
     {
+        if (_IJump)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, _vExploRadius); 
 
+            foreach (Collider hit in colliders)
+            {
+                Rigidbody rb = hit.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.AddExplosionForce(_vForce, transform.position, _vExploRadius, _vVForce, ForceMode.Impulse);
+                }
+            }
+        }
     }
 
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor"))
