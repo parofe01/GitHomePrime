@@ -1,0 +1,1233 @@
+fileFormatVersion: 2
+guid: 8ed3e17d63c0cc342906ae713f619f8d
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: atama
+  - first:
+      1: 100002
+    second: J_atama
+  - first:
+      1: 100004
+    second: J_center
+  - first:
+      1: 100006
+    second: J_end1
+  - first:
+      1: 100008
+    second: J_end4
+  - first:
+      1: 100010
+    second: J_end5
+  - first:
+      1: 100012
+    second: J_end6
+  - first:
+      1: 100014
+    second: J_end7
+  - first:
+      1: 100016
+    second: J_end8
+  - first:
+      1: 100018
+    second: J_end9
+  - first:
+      1: 100020
+    second: J_hara
+  - first:
+      1: 100022
+    second: J_kubi
+  - first:
+      1: 100024
+    second: J_Lashi
+  - first:
+      1: 100026
+    second: J_Lhiji
+  - first:
+      1: 100028
+    second: J_Lhiza
+  - first:
+      1: 100030
+    second: J_Lkata
+  - first:
+      1: 100032
+    second: J_Lmomo
+  - first:
+      1: 100034
+    second: J_Loyayubi
+  - first:
+      1: 100036
+    second: J_Lte
+  - first:
+      1: 100038
+    second: J_Ltuma
+  - first:
+      1: 100040
+    second: J_Lude
+  - first:
+      1: 100042
+    second: J_Lyubi
+  - first:
+      1: 100044
+    second: J_mune
+  - first:
+      1: 100046
+    second: J_Rashi
+  - first:
+      1: 100048
+    second: J_Rhiji
+  - first:
+      1: 100050
+    second: J_Rhiza
+  - first:
+      1: 100052
+    second: J_Rkata
+  - first:
+      1: 100054
+    second: J_Rmomo
+  - first:
+      1: 100056
+    second: J_root_172
+  - first:
+      1: 100058
+    second: J_Royayubi
+  - first:
+      1: 100060
+    second: J_Rte
+  - first:
+      1: 100062
+    second: J_Rtuma
+  - first:
+      1: 100064
+    second: J_Rude
+  - first:
+      1: 100066
+    second: J_Ryubi
+  - first:
+      1: 100068
+    second: loc_001
+  - first:
+      1: 100070
+    second: loc_010
+  - first:
+      1: 100072
+    second: loc_011
+  - first:
+      1: 100074
+    second: loc_020
+  - first:
+      1: 100076
+    second: loc_021
+  - first:
+      1: 100078
+    second: md172_asi_R
+  - first:
+      1: 100080
+    second: md172_asiL
+  - first:
+      1: 100082
+    second: md172_dou
+  - first:
+      1: 100084
+    second: md172_kubi
+  - first:
+      1: 100086
+    second: md172_teL
+  - first:
+      1: 100088
+    second: md172_teR
+  - first:
+      1: 100090
+    second: md172_udeL
+  - first:
+      1: 100092
+    second: md172_udeR
+  - first:
+      1: 100094
+    second: md172_zubon
+  - first:
+      1: 100096
+    second: mesh0
+  - first:
+      1: 100098
+    second: mesh1
+  - first:
+      1: 100100
+    second: mesh10
+  - first:
+      1: 100102
+    second: mesh11
+  - first:
+      1: 100104
+    second: mesh12
+  - first:
+      1: 100106
+    second: mesh13
+  - first:
+      1: 100108
+    second: mesh14
+  - first:
+      1: 100110
+    second: mesh2
+  - first:
+      1: 100112
+    second: mesh3
+  - first:
+      1: 100114
+    second: mesh4
+  - first:
+      1: 100116
+    second: mesh5
+  - first:
+      1: 100118
+    second: mesh6
+  - first:
+      1: 100120
+    second: mesh7
+  - first:
+      1: 100122
+    second: mesh8
+  - first:
+      1: 100124
+    second: mesh9
+  - first:
+      1: 100126
+    second: Null
+  - first:
+      1: 100128
+    second: Null.10
+  - first:
+      1: 100130
+    second: Null.11
+  - first:
+      1: 100132
+    second: Null.12
+  - first:
+      1: 100134
+    second: Null.13
+  - first:
+      1: 100136
+    second: Null.14
+  - first:
+      1: 100138
+    second: Null.15
+  - first:
+      1: 100140
+    second: Null.2
+  - first:
+      1: 100142
+    second: Null.3
+  - first:
+      1: 100144
+    second: Null.4
+  - first:
+      1: 100146
+    second: Null.5
+  - first:
+      1: 100148
+    second: Null.6
+  - first:
+      1: 100150
+    second: Null.7
+  - first:
+      1: 100152
+    second: Null.8
+  - first:
+      1: 100154
+    second: Null.9
+  - first:
+      1: 100156
+    second: //RootNode
+  - first:
+      4: 400000
+    second: atama
+  - first:
+      4: 400002
+    second: J_atama
+  - first:
+      4: 400004
+    second: J_center
+  - first:
+      4: 400006
+    second: J_end1
+  - first:
+      4: 400008
+    second: J_end4
+  - first:
+      4: 400010
+    second: J_end5
+  - first:
+      4: 400012
+    second: J_end6
+  - first:
+      4: 400014
+    second: J_end7
+  - first:
+      4: 400016
+    second: J_end8
+  - first:
+      4: 400018
+    second: J_end9
+  - first:
+      4: 400020
+    second: J_hara
+  - first:
+      4: 400022
+    second: J_kubi
+  - first:
+      4: 400024
+    second: J_Lashi
+  - first:
+      4: 400026
+    second: J_Lhiji
+  - first:
+      4: 400028
+    second: J_Lhiza
+  - first:
+      4: 400030
+    second: J_Lkata
+  - first:
+      4: 400032
+    second: J_Lmomo
+  - first:
+      4: 400034
+    second: J_Loyayubi
+  - first:
+      4: 400036
+    second: J_Lte
+  - first:
+      4: 400038
+    second: J_Ltuma
+  - first:
+      4: 400040
+    second: J_Lude
+  - first:
+      4: 400042
+    second: J_Lyubi
+  - first:
+      4: 400044
+    second: J_mune
+  - first:
+      4: 400046
+    second: J_Rashi
+  - first:
+      4: 400048
+    second: J_Rhiji
+  - first:
+      4: 400050
+    second: J_Rhiza
+  - first:
+      4: 400052
+    second: J_Rkata
+  - first:
+      4: 400054
+    second: J_Rmomo
+  - first:
+      4: 400056
+    second: J_root_172
+  - first:
+      4: 400058
+    second: J_Royayubi
+  - first:
+      4: 400060
+    second: J_Rte
+  - first:
+      4: 400062
+    second: J_Rtuma
+  - first:
+      4: 400064
+    second: J_Rude
+  - first:
+      4: 400066
+    second: J_Ryubi
+  - first:
+      4: 400068
+    second: loc_001
+  - first:
+      4: 400070
+    second: loc_010
+  - first:
+      4: 400072
+    second: loc_011
+  - first:
+      4: 400074
+    second: loc_020
+  - first:
+      4: 400076
+    second: loc_021
+  - first:
+      4: 400078
+    second: md172_asi_R
+  - first:
+      4: 400080
+    second: md172_asiL
+  - first:
+      4: 400082
+    second: md172_dou
+  - first:
+      4: 400084
+    second: md172_kubi
+  - first:
+      4: 400086
+    second: md172_teL
+  - first:
+      4: 400088
+    second: md172_teR
+  - first:
+      4: 400090
+    second: md172_udeL
+  - first:
+      4: 400092
+    second: md172_udeR
+  - first:
+      4: 400094
+    second: md172_zubon
+  - first:
+      4: 400096
+    second: mesh0
+  - first:
+      4: 400098
+    second: mesh1
+  - first:
+      4: 400100
+    second: mesh10
+  - first:
+      4: 400102
+    second: mesh11
+  - first:
+      4: 400104
+    second: mesh12
+  - first:
+      4: 400106
+    second: mesh13
+  - first:
+      4: 400108
+    second: mesh14
+  - first:
+      4: 400110
+    second: mesh2
+  - first:
+      4: 400112
+    second: mesh3
+  - first:
+      4: 400114
+    second: mesh4
+  - first:
+      4: 400116
+    second: mesh5
+  - first:
+      4: 400118
+    second: mesh6
+  - first:
+      4: 400120
+    second: mesh7
+  - first:
+      4: 400122
+    second: mesh8
+  - first:
+      4: 400124
+    second: mesh9
+  - first:
+      4: 400126
+    second: Null
+  - first:
+      4: 400128
+    second: Null.10
+  - first:
+      4: 400130
+    second: Null.11
+  - first:
+      4: 400132
+    second: Null.12
+  - first:
+      4: 400134
+    second: Null.13
+  - first:
+      4: 400136
+    second: Null.14
+  - first:
+      4: 400138
+    second: Null.15
+  - first:
+      4: 400140
+    second: Null.2
+  - first:
+      4: 400142
+    second: Null.3
+  - first:
+      4: 400144
+    second: Null.4
+  - first:
+      4: 400146
+    second: Null.5
+  - first:
+      4: 400148
+    second: Null.6
+  - first:
+      4: 400150
+    second: Null.7
+  - first:
+      4: 400152
+    second: Null.8
+  - first:
+      4: 400154
+    second: Null.9
+  - first:
+      4: 400156
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: mesh14
+  - first:
+      43: 4300002
+    second: mesh13
+  - first:
+      43: 4300004
+    second: mesh12
+  - first:
+      43: 4300006
+    second: mesh11
+  - first:
+      43: 4300008
+    second: mesh10
+  - first:
+      43: 4300010
+    second: mesh9
+  - first:
+      43: 4300012
+    second: mesh8
+  - first:
+      43: 4300014
+    second: mesh7
+  - first:
+      43: 4300016
+    second: mesh6
+  - first:
+      43: 4300018
+    second: mesh5
+  - first:
+      43: 4300020
+    second: mesh4
+  - first:
+      43: 4300022
+    second: mesh3
+  - first:
+      43: 4300024
+    second: mesh2
+  - first:
+      43: 4300026
+    second: mesh1
+  - first:
+      43: 4300028
+    second: mesh0
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: mesh0
+  - first:
+      137: 13700002
+    second: mesh1
+  - first:
+      137: 13700004
+    second: mesh10
+  - first:
+      137: 13700006
+    second: mesh11
+  - first:
+      137: 13700008
+    second: mesh12
+  - first:
+      137: 13700010
+    second: mesh13
+  - first:
+      137: 13700012
+    second: mesh14
+  - first:
+      137: 13700014
+    second: mesh2
+  - first:
+      137: 13700016
+    second: mesh3
+  - first:
+      137: 13700018
+    second: mesh4
+  - first:
+      137: 13700020
+    second: mesh5
+  - first:
+      137: 13700022
+    second: mesh6
+  - first:
+      137: 13700024
+    second: mesh7
+  - first:
+      137: 13700026
+    second: mesh8
+  - first:
+      137: 13700028
+    second: mesh9
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: X__DesignDataDigimon_Model_chara_ch172_takato_takato_kao_tga
+    second: {fileID: 2100000, guid: ff83f29197c2de24d8b7fdd06ad693f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: X__DesignDataDigimon_Model_chara_ch172_takato_takato_tga
+    second: {fileID: 2100000, guid: 34cc99f80be97ce488dc83f7a431d165, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: J_center
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rmomo
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rhiza
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rashi
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rtuma
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_mune
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rkata
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rude
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rhiji
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Rte
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Lkata
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Lude
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Lhiji
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Lte
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Lmomo
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Lhiza
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Lashi
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_Ltuma
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_atama
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Takato(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: atama
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_root_172
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_center
+      parentName: J_root_172
+      position: {x: -0, y: 0.733702, z: 0.0056}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_hara
+      parentName: J_center
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_mune
+      parentName: J_hara
+      position: {x: -0, y: 0.11011599, z: -0.000035}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_kubi
+      parentName: J_mune
+      position: {x: -0, y: 0.15049699, z: -0.032968998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_atama
+      parentName: J_kubi
+      position: {x: -0, y: 0.066212, z: -0.002346}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_end1
+      parentName: J_atama
+      position: {x: -0, y: 0.279759, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: loc_020
+      parentName: J_atama
+      position: {x: -0, y: 0.376603, z: -0.01731}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lkata
+      parentName: J_mune
+      position: {x: -0.015699, y: 0.139188, z: -0.017223}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lude
+      parentName: J_Lkata
+      position: {x: -0.078694, y: -0.023826, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lhiji
+      parentName: J_Lude
+      position: {x: -0.143842, y: 0, z: -0.0038879998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lte
+      parentName: J_Lhiji
+      position: {x: -0.15252, y: 0, z: 0.0038879998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Loyayubi
+      parentName: J_Lte
+      position: {x: -0.040819995, y: -0.009075999, z: 0.044302}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_end5
+      parentName: J_Loyayubi
+      position: {x: -0.030655, y: -0.026781, z: 0.0163}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lyubi
+      parentName: J_Lte
+      position: {x: -0.102896996, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_end4
+      parentName: J_Lyubi
+      position: {x: -0.037012998, y: -0.010307999, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rkata
+      parentName: J_mune
+      position: {x: 0.015699, y: 0.139188, z: -0.017223}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rude
+      parentName: J_Rkata
+      position: {x: 0.078694, y: -0.023826, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rhiji
+      parentName: J_Rude
+      position: {x: 0.143842, y: 0, z: -0.0038879998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rte
+      parentName: J_Rhiji
+      position: {x: 0.15252, y: 0, z: 0.0038879998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Royayubi
+      parentName: J_Rte
+      position: {x: 0.040819, y: -0.009075, z: 0.044302}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_end7
+      parentName: J_Royayubi
+      position: {x: 0.030655, y: -0.026781, z: 0.0163}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Ryubi
+      parentName: J_Rte
+      position: {x: 0.102896996, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_end6
+      parentName: J_Ryubi
+      position: {x: 0.037012998, y: -0.010306999, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: loc_021
+      parentName: J_mune
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lmomo
+      parentName: J_center
+      position: {x: -0.0647, y: -0.060395997, z: 0.0019699999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lhiza
+      parentName: J_Lmomo
+      position: {x: -0, y: -0.246476, z: -0.012726999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Lashi
+      parentName: J_Lhiza
+      position: {x: -0, y: -0.29858, z: -0.033143997}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Ltuma
+      parentName: J_Lashi
+      position: {x: -0, y: -0.09883, z: 0.111139}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_end8
+      parentName: J_Ltuma
+      position: {x: -0, y: 0, z: 0.087427996}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: loc_010
+      parentName: J_Lashi
+      position: {x: -0, y: -0.12824899, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rmomo
+      parentName: J_center
+      position: {x: 0.064678, y: -0.060397, z: 0.0019699999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rhiza
+      parentName: J_Rmomo
+      position: {x: -0, y: -0.24647498, z: -0.012726999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rashi
+      parentName: J_Rhiza
+      position: {x: -0, y: -0.298581, z: -0.033143997}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_Rtuma
+      parentName: J_Rashi
+      position: {x: -0, y: -0.09883, z: 0.111139}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_end9
+      parentName: J_Rtuma
+      position: {x: -0, y: 0, z: 0.087427}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: loc_011
+      parentName: J_Rashi
+      position: {x: -0, y: -0.12824899, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: loc_001
+      parentName: J_root_172
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_asi_R
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_asiL
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_dou
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_kubi
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_teL
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_teR
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_udeL
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_udeR
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: md172_zubon
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh0
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.15
+      parentName: mesh0
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh1
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.14
+      parentName: mesh1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh2
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.13
+      parentName: mesh2
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh3
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.12
+      parentName: mesh3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh4
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.11
+      parentName: mesh4
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh5
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.10
+      parentName: mesh5
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh6
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.9
+      parentName: mesh6
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh7
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.8
+      parentName: mesh7
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh8
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.7
+      parentName: mesh8
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh9
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.6
+      parentName: mesh9
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh10
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.5
+      parentName: mesh10
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh11
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.4
+      parentName: mesh11
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh12
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.3
+      parentName: mesh12
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh13
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null.2
+      parentName: mesh13
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh14
+      parentName: Takato(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Null
+      parentName: mesh14
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 0
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
