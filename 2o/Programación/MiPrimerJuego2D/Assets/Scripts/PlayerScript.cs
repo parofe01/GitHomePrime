@@ -92,12 +92,12 @@ public class PlayerController : MonoBehaviour
     private void Idle()
     {
         myanimator.Play("Idle-Animation");
-        if (GroundCheckScript.tocoSuelo) myRigid.velocity = Vector2.zero;
+        if (GroundCheckScript.tocoSuelo) myRigid.linearVelocity = Vector2.zero;
 
         if (Input.GetAxisRaw("Horizontal") != 0) SetState(States.run);
         if (Input.GetButtonDown("Fire1") && canShoot) SetState(States.attack);
         if (Input.GetButtonDown("Jump")) SetState(States.jump);
-        if (myRigid.velocity.y < 0) SetState(States.falling);
+        if (myRigid.linearVelocity.y < 0) SetState(States.falling);
     }
 
     private void Run()
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.left * Time.deltaTime * myspeed, Space.World);
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        if (myRigid.velocity.y < 0) SetState(States.falling);
+        if (myRigid.linearVelocity.y < 0) SetState(States.falling);
 
         if (Input.GetAxisRaw("Horizontal") == 0) SetState(States.idle);
         if (Input.GetButtonDown("Jump")) SetState(States.jump);
@@ -124,26 +124,26 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         myanimator.Play("Jump-Animation");
-        myRigid.velocity = new Vector2(0, 8);
+        myRigid.linearVelocity = new Vector2(0, 8);
 
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            myRigid.velocity = new Vector2(myspeed, jumpForce);
+            myRigid.linearVelocity = new Vector2(myspeed, jumpForce);
         }
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            myRigid.velocity = new Vector2(-myspeed, jumpForce);
+            myRigid.linearVelocity = new Vector2(-myspeed, jumpForce);
         }
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
-            myRigid.velocity = new Vector2(0, jumpForce);
+            myRigid.linearVelocity = new Vector2(0, jumpForce);
         }
         SetState(States.finishJump);
     }
 
     private void FinishJump()
     {
-        if (myRigid.velocity.y < 0) SetState(States.falling);
+        if (myRigid.linearVelocity.y < 0) SetState(States.falling);
     }
 
     private void Falling()
