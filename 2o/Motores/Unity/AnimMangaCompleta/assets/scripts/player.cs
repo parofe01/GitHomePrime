@@ -90,7 +90,7 @@ public class player : MonoBehaviour {
 			moveZ*=3f;
 		}
 
-		rbody.velocity = new Vector3(moveX,0f,moveZ);
+		rbody.linearVelocity = new Vector3(moveX,0f,moveZ);
 
 	}
 }
