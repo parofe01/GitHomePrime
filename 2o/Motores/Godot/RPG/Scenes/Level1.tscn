@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b4gpk71pe7mv3"]
+[gd_scene load_steps=18 format=4 uid="uid://b4gpk71pe7mv3"]
 
 [ext_resource type="PackedScene" uid="uid://bfc0p0w245wlr" path="res://Prefabs/Player.tscn" id="1_d3idb"]
 [ext_resource type="Texture2D" uid="uid://4ibhhu5pxd52" path="res://Art/mystic_woods_free_2.2/tilesets/plains.png" id="2_fxuws"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cqhvth3lxugdm" path="res://Art/mystic_woods_free_2.2/tilesets/grass.png" id="3_ayl68"]
 [ext_resource type="Texture2D" uid="uid://gwhy7n7j6d0j" path="res://Art/mystic_woods_free_2.2/objects/objects.png" id="4_lspcu"]
 [ext_resource type="PackedScene" uid="uid://b35mpxfmwgynb" path="res://Prefabs/Chest.tscn" id="4_yoy4x"]
+[ext_resource type="PackedScene" uid="uid://bss4ses2ixs14" path="res://Prefabs/Slime.tscn" id="6_5lcgk"]
+[ext_resource type="PackedScene" uid="uid://dpx02cdg8rnw5" path="res://Prefabs/Zombie.tscn" id="8_slhyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utd0y"]
 texture = ExtResource("2_fxuws")
@@ -442,7 +444,31 @@ tile_set = SubResource("TileSet_wp8h0")
 position = Vector2(80, -87)
 
 [node name="Player" parent="." instance=ExtResource("1_d3idb")]
-position = Vector2(145, -20)
+position = Vector2(-632, 884)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
+
+[node name="Slime" parent="." instance=ExtResource("6_5lcgk")]
+position = Vector2(55, 679)
+
+[node name="Slime2" parent="." instance=ExtResource("6_5lcgk")]
+position = Vector2(-415, 442)
+
+[node name="Slime3" parent="." instance=ExtResource("6_5lcgk")]
+position = Vector2(181, 282)
+
+[node name="Slime4" parent="." instance=ExtResource("6_5lcgk")]
+position = Vector2(-578, 102)
+
+[node name="Zombie" parent="." instance=ExtResource("8_slhyb")]
+position = Vector2(0, -84)
+
+[node name="Zombie2" parent="." instance=ExtResource("8_slhyb")]
+position = Vector2(-1137, 713)
+
+[node name="Zombie3" parent="." instance=ExtResource("8_slhyb")]
+position = Vector2(-1008, 712)
+
+[node name="Zombie4" parent="." instance=ExtResource("8_slhyb")]
+position = Vector2(-1072, 734)

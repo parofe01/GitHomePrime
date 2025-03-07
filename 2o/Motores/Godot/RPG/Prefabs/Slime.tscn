@@ -166,6 +166,16 @@ collision_mask = 2
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_s6ami")
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0, 1)
+offset_left = -6.0
+offset_top = 3.0
+offset_right = 114.0
+offset_bottom = 30.0
+scale = Vector2(0.1, 0.1)
+max_value = 5000.0
+show_percentage = false
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_shape_entered" from="SlimeHitbox" to="." method="_on_slime_hitbox_body_shape_entered"]

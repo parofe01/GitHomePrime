@@ -420,12 +420,12 @@ radius = 4.0
 radius = 13.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjek3"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
+bg_color = Color(1, 0.447059, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 0, 1)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -466,25 +466,27 @@ scale = Vector2(0.1, 0.1)
 show_percentage = false
 
 [node name="Boost" type="Label" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = 6.0
-offset_right = 80.0
-offset_bottom = 35.0
+offset_left = -12.0
+offset_top = 7.0
+offset_right = 218.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_xjek3")
 text = "\"Boosted\""
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RenenTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="body_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_body_entered"]

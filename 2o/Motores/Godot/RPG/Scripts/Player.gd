@@ -139,7 +139,7 @@ func _on_deal_attack_timer_timeout() -> void:
 func updateCanvas():
 	var healthbar = $HealthBar
 	healthbar.value = health
-	if health >= 100:
+	if health >= 100 or health <= 0:
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
