@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bfc0p0w245wlr"]
+[gd_scene load_steps=58 format=3 uid="uid://bfc0p0w245wlr"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_hpcnj"]
 [ext_resource type="Texture2D" uid="uid://booykx0kn03ak" path="res://Art/mystic_woods_free_2.2/characters/player.png" id="1_qmhge"]
@@ -270,7 +270,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gvyr2")
 }],
-"loop": true,
+"loop": false,
 "name": &"Die",
 "speed": 5.0
 }, {
@@ -413,13 +413,84 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_omqen"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fiyd"]
+radius = 13.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjek3"]
+bg_color = Color(1, 0.447059, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 0, 1)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_hpcnj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_4gx6h")
-animation = &"Idle_Front"
+animation = &"Attack_Front"
 autoplay = "Idle_Front"
-frame_progress = 0.570452
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_omqen")
+
+[node name="PlayerHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_6fiyd")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="DealAttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0, 1)
+offset_left = -6.0
+offset_top = 3.0
+offset_right = 114.0
+offset_bottom = 30.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+
+[node name="Boost" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = 7.0
+offset_right = 218.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xjek3")
+text = "\"Boosted\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RenenTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="PlayerHitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="DealAttackTimer" to="." method="_on_deal_attack_timer_timeout"]
+[connection signal="timeout" from="RenenTimer" to="." method="_on_renen_timer_timeout"]

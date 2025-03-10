@@ -1,108 +1,157 @@
 extends CharacterBody2D
 
-''' State Machine '''
-enum State { 
-	IDLE_UP, IDLE_DOWN, IDLE_LEFT, IDLE_RIGHT, 
-	WALK_UP, WALK_DOWN, WALK_LEFT, WALK_RIGHT, 
-	ATTACK_UP, ATTACK_DOWN, ATTACK_LEFT, ATTACK_RIGHT, 
-	DIE 
-}
+var enemyInRange = false
+var enemyAttackCooldown = true
+var health = 100
+const speed = 100
+var damage = 0
+var boost = false
+var deathPlayed = false
+var attackInProgress = false
+enum Dir {Right, Left, Up, Down}
+var dir = Dir.Down
+enum State {Idle, Walk, Attack, Death}
+var state = State.Idle
+@onready var animator = $AnimatedSprite2D
+@onready var timer = $AttackCooldown
+func _ready():
+	pass
 
-var currentState = State.IDLE_DOWN
-
-''' Variables '''
-
-@export var speed = 100
-
-func StateMachine():
-	match currentState:
-		State.IDLE_UP:
-			Idle_Up()
-		State.IDLE_DOWN:
-			Idle_Down()
-		State.IDLE_LEFT:
-			Idle_Left()
-		State.IDLE_RIGHT:
-			Idle_Right()
-		State.WALK_UP:
-			Walk_Up()
-		State.WALK_DOWN:
-			Walk_Down()
-		State.WALK_LEFT:
-			Walk_Left()
-		State.WALK_RIGHT:
-			Walk_Right()
-		State.ATTACK_UP:
-			Attack_Up()
-		State.ATTACK_DOWN:
-			Attack_Down()
-		State.ATTACK_LEFT:
-			Attack_Left()
-		State.ATTACK_RIGHT:
-			Attack_Right()
-		State.DIE:
-			Die()
-
-
-	
 func _physics_process(delta):
-	playerMovement(delta)
-	
-func playerMovement(delta):
-	if (Input.is_action_pressed("ui_right")):
+	if state != State.Death and !attackInProgress:
+		player_movement(delta)
+	play_anim()
+	enemy_attack()
+	updateCanvas()
+
+func player_movement(delta):
+	if Input.is_action_pressed("ui_right"):
+		dir = Dir.Right;
+		state = State.Walk
 		velocity.x = speed
 		velocity.y = 0
-	elif (Input.is_action_pressed("ui_left")):
+	elif Input.is_action_pressed("ui_left"):
+		dir = Dir.Left;
+		state = State.Walk
 		velocity.x = -speed
 		velocity.y = 0
-	elif (Input.is_action_pressed("ui_up")):
-		velocity.x = 0
-		velocity.y = -speed
-	elif (Input.is_action_pressed("ui_down")):
-		velocity.x = 0
+	elif Input.is_action_pressed("ui_down"):
+		dir = Dir.Down;
+		state = State.Walk
 		velocity.y = speed
+		velocity.x = 0
+	elif Input.is_action_pressed("ui_up"):
+		dir = Dir.Up;
+		state = State.Walk
+		velocity.y = -speed
+		velocity.x = 0
+	elif  Input.is_action_just_pressed("Attack"):
+		Global.playerCurrentAttack = true
+		attackInProgress = true
+		state = State.Attack
+		$DealAttackTimer.start()
 	else:
-		velocity = Vector2.ZERO
+		state = State.Idle
+		velocity.x = 0
+		velocity.y = 0
 	
 	move_and_slide()
-	
+
+func play_anim():
+	if dir == Dir.Left:
+		animator.flip_h = true
+	else:
+		animator.flip_h = false
+	match state:
+		State.Idle:
+			match dir:
+				Dir.Up:
+					animator.play("Idle_Back")
+				Dir.Down:
+					animator.play("Idle_Front")
+				Dir.Left:
+					animator.play("Idle_Side")
+				Dir.Right:
+					animator.play("Idle_Side")
+		State.Walk:
+			match dir:
+				Dir.Up:
+					animator.play("Walk_Back")
+				Dir.Down:
+					animator.play("Walk_Front")
+				Dir.Left:
+					animator.play("Walk_Side")
+				Dir.Right:
+					animator.play("Walk_Side")
+		State.Attack:
+			match dir:
+				Dir.Up:
+					animator.play("Attack_Back")
+				Dir.Down:
+					animator.play("Attack_Front")
+				Dir.Left:
+					animator.play("Attack_Side")
+				Dir.Right:
+					animator.play("Attack_Side")
+		State.Death:
+			if !deathPlayed:
+				animator.play("Die")
+				deathPlayed = true
+			
+
+func player():
 	pass
 
-func Idle_Up():
-	pass
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		enemyInRange = true
+	if body.has_method("slime"):
+		damage = 10
+	if body.has_method("zombie"):
+		damage = 25
 
-func Idle_Down():
-	pass
+func _on_player_hitbox_body_exited(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		enemyInRange = false
+	if body.has_method("slime"):
+		damage = 0
+	if body.has_method("zombie"):
+		damage = 0
 
-func Idle_Left():
-	pass
+func enemy_attack():
+	if enemyInRange && enemyAttackCooldown:
+		health -= damage
+		enemyAttackCooldown = false
+		timer.start()
+		print(health)
+		if (health <= 0):
+			health = 0
+			state = State.Death
 
-func Idle_Right():
-	pass
+func _on_attack_cooldown_timeout() -> void:
+	enemyAttackCooldown = true
 
-func Walk_Up():
-	pass
+func _on_deal_attack_timer_timeout() -> void:
+	$DealAttackTimer.stop()
+	Global.playerCurrentAttack = false
+	attackInProgress = false
 
-func Walk_Down():
-	pass
+func updateCanvas():
+	var healthbar = $HealthBar
+	healthbar.value = health
+	if health >= 100 or health <= 0:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
+		
+	var boostedMessage = $Boost
+	if Global.boosted:
+		boostedMessage.visible = true
+	else:
+		boostedMessage.visible = false
 
-func Walk_Left():
-	pass
-
-func Walk_Right():
-	pass
-
-func Attack_Up():
-	pass
-
-func Attack_Down():
-	pass
-
-func Attack_Left():
-	pass
-
-func Attack_Right():
-	pass
-
-func Die():
-	pass
+func _on_renen_timer_timeout() -> void:
+	if state != State.Death:
+		health += 10
+		if health > 100:
+			health = 100
