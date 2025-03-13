@@ -9,12 +9,14 @@ public class FireShell : MonoBehaviour {
     public Transform turretBase;
     public GameObject enemy;
 
-    public float rotSpeed = 2;
-    private float s = 10;
+    public float moveSpeed = 1f;
+    public float rotSpeed = 5;
+    private float s = 100; // velocidad de salida de la bala
     
     void CreateBullet() {
 
-        Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        GameObject shell = Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        shell.GetComponent<Rigidbody>().linearVelocity = s * turretBase.forward;
     }
 
     float? calculateAngle(bool low)
@@ -62,9 +64,13 @@ public class FireShell : MonoBehaviour {
 
         float? angle = rotateTurret();
         
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (angle != null) 
         {
-                CreateBullet();
+            CreateBullet();
+        }
+        else
+        {
+            transform.Translate(0, 0, Time.deltaTime * moveSpeed);
         }
     }
 }
