@@ -1,0 +1,1 @@
+Se que la entrega está suspendida antes de que si quiera la revises, para la segunda convocatoria lo entregaré finalizado y en condiciones para el 10 (aunque no se pueda por ser la segunda convocatoria)
