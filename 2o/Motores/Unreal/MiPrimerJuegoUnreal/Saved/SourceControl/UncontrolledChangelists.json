@@ -5,10 +5,23 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Lista de cambios no controlados predeterminada",
 			"files": [
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/Clase.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/NewUserDefinedStruct.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/PLAYERTEST01.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/GAMEMODETEST01.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/Chair.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/Table.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/8O/GK06JAEJ82TQ0GA2QB0DJG.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/YO/NG2R9BPZVA7ZDN0Z4VSTG6.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/1K/LIK1YUA7T6FCU57OXN5EQJ.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/XP/OWKMB8T72PLXILF8U2JFX2.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/UK/TLF3PXAY4ROESM3EM6IJ1P.uasset",
+				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/ThirdPerson/Maps/ThirdPersonMap.umap",
 				"C:/Users/pablo/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/NewBlueprint.uasset",
 				"C:/Users/pablo/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/GAMEMODETEST01.uasset",
-				"C:/Users/pablo/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/PLAYERTEST01.uasset",
-				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/StarterContent/Architecture/Floor_400x400.uasset"
+				"C:/Users/pablo/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/PLAYERTEST01.uasset"
 			]
 		}
 	]
