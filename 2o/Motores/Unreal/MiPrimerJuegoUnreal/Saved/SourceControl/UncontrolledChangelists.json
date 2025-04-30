@@ -5,6 +5,9 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Lista de cambios no controlados predeterminada",
 			"files": [
+				"C:/Users/pablo/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/NewBlueprint.uasset",
+				"C:/Users/pablo/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/GAMEMODETEST01.uasset",
+				"C:/Users/pablo/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/Main/PLAYERTEST01.uasset",
 				"C:/Users/parofe01/Documents/GitHub/GitHomePrime/2o/Motores/Unreal/MiPrimerJuegoUnreal/Content/StarterContent/Architecture/Floor_400x400.uasset"
 			]
 		}
