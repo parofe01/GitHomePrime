@@ -3,9 +3,9 @@ var program;
 
 var exampleTriangle = {
 
-  "vertices" : [-0.7, -0.0, 0.0,
-                 0.7, -0.7, 0.0,
-                 0.0,  0.7, 0.0],
+  "vertices" : [0.5, -0.5, 0.0,
+                 0.65, -0.55, 0.0, 
+                 0.6,  -0.4, 0.0],
 
   "indices" : [ 0, 1, 2]
 
@@ -57,7 +57,7 @@ function initShaders() {
 
 function initRendering() {
 
-  gl.clearColor(0.0,0.0,1.0,1.0);
+  gl.clearColor(0.35,0.0,0.35,1.0);
 
 }
   
@@ -101,8 +101,8 @@ function initWebGL() {
   }
 
   initShaders();
-  initBuffers(exampleTriangle);
   initRendering();
+  initBuffers(exampleTriangle);
   
   requestAnimationFrame(drawScene);
 
