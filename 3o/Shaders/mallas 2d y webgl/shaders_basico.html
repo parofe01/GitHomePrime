@@ -16,9 +16,10 @@
 
     <script id="myFragmentShader" type="x-shader/x-fragment">#version 300 es
     precision mediump float;
+    uniform vec4 myColor;
     out vec4 fragmentColor;
     void main() {
-        fragmentColor = vec4(0.0, 1.0, 0.0, 1.0);
+    fragmentColor = myColor;
     }
     </script>
 

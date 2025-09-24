@@ -1,22 +1,32 @@
 var gl, program;
 
-var exampleTriangle = {
+var estrella = {
     "vertices": [
+        //Exteriores
         0.0, 0.9, 0.0,
         -0.95, 0.2, 0.0,
         -0.6, -0.9, 0.0,
         0.6, -0.9, -0.0,
         0.95, 0.2, 0.0,
+        //Interiores
+        -0.23, 0.2, 0.0,
+        -0.37, -0.22, 0.0,
+        0.0, -0.48, 0.0,
+        0.37, -0.22, 0.0,
+        0.23, 0.2, 0.0,
     ],
-    "indices": [
-        /*0, 1, 2,
-        2, 3, 4,
-        2, 4, 0*/ // rentagono Relleno
-        /*0, 1, 2,
-        2, 3, 4,
-        2, 4, 0*/
-        // 0, 1, 2, 3, 4 // pentagono hueco
-        // 0, 2, 4, 1, 3 // estrella rayada
+    "indicesRellenos": [
+        0, 5, 9,
+        1, 5, 6,
+        6, 2, 7,
+        7, 3, 8,
+        8, 9, 4,
+        5, 9, 6,
+        6, 7, 8,
+        6, 8, 9
+    ],
+    "indicesHuecos": [
+        0, 9
     ]
 };
 
@@ -60,6 +70,8 @@ function initShaders() {
   // Obtener y habilitar el atributo
   program.vertexPositionAttribute = gl.getAttribLocation(program, "VertexPosition");
   gl.enableVertexAttribArray(program.vertexPositionAttribute);
+
+    idMyColor = gl.getUniformLocation(program, "myColor");
 }
 
 
@@ -70,11 +82,17 @@ function initBuffers(model) {
     gl.bufferData(gl.ARRAY_BUFFER,
         new Float32Array(model.vertices), gl.STATIC_DRAW);
 
-    // Buffer de índices
+    // Buffer de índices Huecos
     model.idBufferIndices = gl.createBuffer();
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,
-        new Uint16Array(model.indices), gl.STATIC_DRAW);
+        new Uint16Array(model.indicesHuecos), gl.STATIC_DRAW);
+
+    // Buffer de índices Rellenos
+    model.idBufferIndices = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,
+        new Uint16Array(model.indicesRellenos), gl.STATIC_DRAW);
 }
 
 function initRendering() {
@@ -91,7 +109,22 @@ function draw(model) {
     /*gl.drawElements(gl.
         TRIANGLES, model.indices.length, gl.UNSIGNED_SHORT, 0); // Pentagono Relleno 1 color  */
     gl.drawElements(gl.
-        LINE_LOOP, model.indices.length, gl.UNSIGNED_SHORT, 0); // Pentagono y Estrella Rallada Hueco 
+        TRIANGLES, model.indicesRellenos.length, gl.UNSIGNED_SHORT, 0); // Pentagono y Estrella Rallada Hueco 
+}
+
+function drawOutline(model) {
+    gl.bindBuffer(gl.ARRAY_BUFFER, model.idBufferVertices);
+    gl.vertexAttribPointer(
+        program.vertexPositionAttribute,
+        3, gl.FLOAT, false, 0, 0
+    );
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
+    gl.drawElements(gl.
+        LINE_STRIP, model.indicesHuecos.length, gl.UNSIGNED_SHORT, 0); // Pentagono y Estrella Rallada Hueco 
+}
+
+function SetIdColor(newColor) {
+    gl.uniform4f(idMyColor, newColor[0], newColor[1], newColor[2], newColor[3]);
 }
 
 function drawScene() {
@@ -100,7 +133,10 @@ function drawScene() {
     return;
   }
   gl.clear(gl.COLOR_BUFFER_BIT);
-  draw(exampleTriangle);
+  SetIdColor([0.2, 0.8, 0.2, 1.0]); // rojo
+  draw(estrella);
+  SetIdColor([0.8, 0.2, 0.2, 1.0]); // rojo
+  drawOutline(estrella);
 }
 
 
@@ -111,7 +147,7 @@ function initWebGL() {
         return;
     }
     initShaders();
-    initBuffers(exampleTriangle);
+    initBuffers(estrella);
     initRendering();
     requestAnimationFrame(drawScene);
 }
