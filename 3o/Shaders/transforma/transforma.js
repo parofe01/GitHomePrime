@@ -1,33 +1,23 @@
 var gl, program;
 
-var estrella = {
-    "vertices": [
-        //Exteriores
-        0.0, 0.9, 0.0,
-        -0.95, 0.2, 0.0,
-        -0.6, -0.9, 0.0,
-        0.6, -0.9, -0.0,
-        0.95, 0.2, 0.0,
-        //Interiores
-        -0.23, 0.2, 0.0,
-        -0.37, -0.22, 0.0,
-        0.0, -0.48, 0.0,
-        0.37, -0.22, 0.0,
-        0.23, 0.2, 0.0,
+// Prisma triangular
+var triangularPrism = {
+    vertices: [
+        // Base triangle (bottom)
+        -0.5, -0.5, -0.5,
+        0.5, -0.5, -0.5,
+        0.0, -0.5, 0.5,
+        // Top triangle (above base)
+        -0.5, 0.5, -0.5,
+        0.5, 0.5, -0.5,
+        0.0, 0.5, 0.5
     ],
-    "indicesRellenos": [
-        0, 5, 9,
-        1, 5, 6,
-        6, 2, 7,
-        7, 3, 8,
-        8, 9, 4,
-        5, 9, 6,
-        6, 7, 8,
-        6, 8, 9
-    ],
-    "indicesHuecos": [
-        0, 5, 5, 1, 1, 6, 6, 2, 2, 7, 7, 3, 
-        
+    indices: [
+        0, 1, 2,    // Base
+        3, 5, 4,    // Top
+        0, 3, 1, 1, 3, 4,    // Side 1
+        1, 4, 2, 2, 4, 5,    // Side 2
+        2, 5, 0, 0, 5, 3     // Side 3
     ]
 };
 
@@ -71,8 +61,6 @@ function initShaders() {
   // Obtener y habilitar el atributo
   program.vertexPositionAttribute = gl.getAttribLocation(program, "VertexPosition");
   gl.enableVertexAttribArray(program.vertexPositionAttribute);
-
-    idMyColor = gl.getUniformLocation(program, "myColor");
 }
 
 
@@ -83,17 +71,11 @@ function initBuffers(model) {
     gl.bufferData(gl.ARRAY_BUFFER,
         new Float32Array(model.vertices), gl.STATIC_DRAW);
 
-    // Buffer de índices Huecos
+    // Buffer de índices
     model.idBufferIndices = gl.createBuffer();
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,
-        new Uint16Array(model.indicesHuecos), gl.STATIC_DRAW);
-
-    // Buffer de índices Rellenos
-    model.idBufferIndices = gl.createBuffer();
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
-    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,
-        new Uint16Array(model.indicesRellenos), gl.STATIC_DRAW);
+        new Uint16Array(model.indices), gl.STATIC_DRAW);
 }
 
 function initRendering() {
@@ -107,37 +89,27 @@ function draw(model) {
         3, gl.FLOAT, false, 0, 0
     );
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
-    /*gl.drawElements(gl.
-        TRIANGLES, model.indices.length, gl.UNSIGNED_SHORT, 0); // Pentagono Relleno 1 color  */
-    gl.drawElements(gl.
-        TRIANGLES, model.indicesRellenos.length, gl.UNSIGNED_SHORT, 0); // Pentagono y Estrella Rallada Hueco 
-}
-
-function drawOutline(model) {
-    gl.bindBuffer(gl.ARRAY_BUFFER, model.idBufferVertices);
-    gl.vertexAttribPointer(
-        program.vertexPositionAttribute,
-        3, gl.FLOAT, false, 0, 0
-    );
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
-    gl.drawElements(gl.
-        LINES, model.indicesHuecos.length, gl.UNSIGNED_SHORT, 0); // Pentagono y Estrella Rallada Hueco 
-}
-
-function SetIdColor(newColor) {
-    gl.uniform4f(idMyColor, newColor[0], newColor[1], newColor[2], newColor[3]);
+    for (var i = 0; i < model.indices.length; i+= 3)
+        gl.drawElements(gl.LINE_LOOP, 3, gl.UNSIGNED_SHORT, i*2);
 }
 
 function drawScene() {
-  if (!program) {
-    console.warn("El programa WebGL no está inicializado.");
-    return;
-  }
-  gl.clear(gl.COLOR_BUFFER_BIT);
-  SetIdColor([0.2, 0.8, 0.2, 1.0]); // rojo
-  draw(estrella);
-  SetIdColor([0.8, 0.2, 0.2, 1.0]); // rojo
-  drawOutline(estrella);
+
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    //Calcula la matriz de transformacion
+    var modelMatrix = mat4.create();
+    mat4.fromScaling(modelMatrix, [0.5, 0.5, 0.5]);
+
+    //Establece la matriz modelMatrix en el shader de vertices
+    gl.uniformMatrix4fv(program.modelMatrixIndex, false, modelMatrix);
+
+    //para la matriz de la normal
+    // var normalMatrix = mat3.create()
+    //mat3.normalFromMat4(normalMatrix, modelMatrix);
+    //gl.uniformMatrix3fv(program.normalMatrixIndez, false, normalMatrix)
+    //Dibuja la primitiva
+    draw(triangularPrism);
 }
 
 
@@ -148,7 +120,7 @@ function initWebGL() {
         return;
     }
     initShaders();
-    initBuffers(estrella);
+    initBuffers(triangularPrism);
     initRendering();
     requestAnimationFrame(drawScene);
 }
