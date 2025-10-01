@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dibuja</title>
+    <style type="text/css">
+        canvas { border: 1px solid black; }
+    </style>
+
+    <script id="myVertexShader" type="x-shader/x-vertex">#version 300 es
+
+    uniform mat4 M; //matriz de transformacion del modelo
+    //uniform mat3 N; //matriz de transformacion de la normal
+
+    in vec3 VertexPosition;
+    // in vec3 VertexNormal;
+    // out vec3 VertexNormalT;
+
+    void main() {
+        //VertexNormalT = normalize(N * VertexNormal);
+        gl_Position = vec4(VertexPosition, 1.0);
+    }
+    </script>
+
+    <script id="myFragmentShader" type="x-shader/x-fragment">#version 300 es
+    precision mediump float;
+    out vec4 fragmentColor;
+    void main() {
+    fragmentColor = vec4(0.0, 1.0, 0.0, 1.0);
+    }
+    </script>
+
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="600">
+        Tu navegador no soporta HTML5
+    </canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.4.0/gl-matrix.js"></script>
+    <script src="transforma.js"></script>
+</body>
+</html>
