@@ -1,6 +1,6 @@
 var gl, program;
 
-var StarStroke = {
+var estrellaBorde = {
     "vertices": [
         0.0, 0.9, 0.0,
         -0.97, 0.2, 0.0,
@@ -16,12 +16,12 @@ var StarStroke = {
     "indices": [0, 5, 1, 6, 2, 7, 3, 8, 4, 9]
 };
 
-var StarFill = {
+var estrellaFill = {
     "vertices": [
-        0.0 ,  0.9, 0.0,
-       -0.97,  0.2, 0.0,
-       -0.6 , -0.9, 0.0,
-        0.6 , -0.9, 0.0,
+        0.0, 0.9, 0.0,
+        -0.97, 0.2, 0.0,
+        -0.6, -0.9, 0.0,
+        0.6, -0.9, 0.0,
         0.95, 0.2, 0.0,
         -0.23, 0.2, 0.0,
         -0.37, -0.22, 0.0,
@@ -29,18 +29,7 @@ var StarFill = {
         0.37, -0.22, 0.0,
         0.23, 0.2, 0.0
     ],
-    "indices": [0, 2, 8, 1, 7, 4, 7, 3, 8]
-};
-
-var Pentagram = {
-    "vertices": [
-        0.0, -0.9, 0.0,
-        -0.97, -0.2, 0.0,
-        -0.6, 0.9, 0.0,
-        0.6, 0.9, 0.0,
-        0.95, -0.2, 0.0,
-    ],
-    "indices": [0, 2, 4, 1, 3]
+    "indices": [0, 2, 8, 1, 9, 3, 5, 2, 4]
 };
 
 function getWebGLContext() {
@@ -82,9 +71,7 @@ function initShaders() {
 
   // Obtener y habilitar el atributo
   program.vertexPositionAttribute = gl.getAttribLocation(program, "VertexPosition");
-    gl.enableVertexAttribArray(program.vertexPositionAttribute);
-
-    idMyColor = gl.getUniformLocation(program, "myColor");
+  gl.enableVertexAttribArray(program.vertexPositionAttribute);
 }
 
 
@@ -103,41 +90,35 @@ function initBuffers(model) {
 }
 
 function initRendering() {
-    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clearColor(1.0, 0.0, 0.0, 1.0);
 }
 
 function SetIdColor(newColor) {
+    
+    var idMyColor = gl.getUniformLocation(program, "myColor");
     gl.uniform4f(idMyColor, newColor[0], newColor[1], newColor[2], newColor[3]);
+    
 }
 
-function draw(model) {
+function drawBorde(model) {
+    gl.bindBuffer(gl.ARRAY_BUFFER, model.idBufferVertices);
+    gl.vertexAttribPointer(
+        program.vertexPositionAttribute,
+        3, gl.FLOAT, false, 0, 0
+    );
+    
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
+    gl.drawElements(gl.LINE_LOOP, model.indices.length, gl.UNSIGNED_SHORT, 0);
+}
+
+function drawFill(model) {
     gl.bindBuffer(gl.ARRAY_BUFFER, model.idBufferVertices);
     gl.vertexAttribPointer(
         program.vertexPositionAttribute,
         3, gl.FLOAT, false, 0, 0
     );
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
-    gl.drawElements(gl.LINE_LOOP, 5, gl.UNSIGNED_SHORT, 0);
-}
-
-function drawGeometryLines(model) {
-    gl.bindBuffer(gl.ARRAY_BUFFER, model.idBufferVertices);
-    gl.vertexAttribPointer(
-        program.vertexPositionAttribute,
-        3, gl.FLOAT, false, 0, 0
-    );
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
-    gl.drawElements(gl.LINE_LOOP, 10, gl.UNSIGNED_SHORT, 0);
-}
-
-function drawGeometryTriangles(model) {
-    gl.bindBuffer(gl.ARRAY_BUFFER, model.idBufferVertices);
-    gl.vertexAttribPointer(
-        program.vertexPositionAttribute,
-        3, gl.FLOAT, false, 0, 0
-    );
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, model.idBufferIndices);
-    gl.drawElements(gl.TRIANGLES, 9, gl.UNSIGNED_SHORT, 0);
+    gl.drawElements(gl.TRIANGLES, model.indices.length, gl.UNSIGNED_SHORT, 0);
 }
 
 function drawScene() {
@@ -145,12 +126,12 @@ function drawScene() {
     console.warn("El programa WebGL no está inicializado.");
     return;
   }
-    gl.clear(gl.COLOR_BUFFER_BIT);
-    SetIdColor([0.0, 1.0, 0.5, 1.0]);
-    //draw(Pentagram);
-    drawGeometryTriangles(StarFill);
-    SetIdColor([1.0, 0.0, 0.7, 1.0]);
-    drawGeometryLines(StarStroke);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+  SetIdColor([1.0, 0.0, 0.0, 1.0]);
+  drawFill(estrellaFill);
+  SetIdColor([1.0, 1.0, 0.0, 1.0]);
+  drawBorde(estrellaBorde);
+  
 }
 
 
@@ -161,9 +142,8 @@ function initWebGL() {
         return;
     }
     initShaders();
-    initBuffers(Pentagram);
-    initBuffers(StarFill);
-    initBuffers(StarStroke);
+    initBuffers(estrellaFill);
+    initBuffers(estrellaBorde);
     initRendering();
     requestAnimationFrame(drawScene);
 }
