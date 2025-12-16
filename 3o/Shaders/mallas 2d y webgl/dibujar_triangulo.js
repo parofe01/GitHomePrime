@@ -90,7 +90,7 @@ function initBuffers(model) {
 }
 
 function initRendering() {
-    gl.clearColor(1.0, 0.0, 0.0, 1.0);
+    gl.clearColor(0.8, 0.0, 0.0, 1.0);
 }
 
 function SetIdColor(newColor) {

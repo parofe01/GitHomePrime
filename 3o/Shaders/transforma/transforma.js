@@ -4,20 +4,16 @@ var gl, program;
 var triangularPrism = {
     vertices: [
         // Base triangle (bottom)
-        -0.5, -0.5, -0.5,
-        0.5, -0.5, -0.5,
-        0.0, -0.5, 0.5,
+        -0.5, -0.5, -0.5, //abajo izq
+        0.5, -0.5, -0.5, //abajo der
+        0.0, -0.5, 0.5, // 
         // Top triangle (above base)
-        -0.5, 0.5, -0.5,
-        0.5, 0.5, -0.5,
+        -0.5, 0.5, -0.5, //arriba izq
+        0.5, 0.5, -0.5, //arriba der
         0.0, 0.5, 0.5
     ],
     indices: [
-        0, 1, 2,    // Base
-        3, 5, 4,    // Top
         0, 3, 1, 1, 3, 4,    // Side 1
-        1, 4, 2, 2, 4, 5,    // Side 2
-        2, 5, 0, 0, 5, 3     // Side 3
     ]
 };
 
@@ -61,6 +57,9 @@ function initShaders() {
   // Obtener y habilitar el atributo
   program.vertexPositionAttribute = gl.getAttribLocation(program, "VertexPosition");
   gl.enableVertexAttribArray(program.vertexPositionAttribute);
+
+    // Obtener la ubicación del uniform de la matriz de modelo
+  program.modelMatrixIndex = gl.getUniformLocation(program, "M");
 }
 
 
