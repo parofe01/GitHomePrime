@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="512468df-3df2-44c5-b57c-6b7b037bc578" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assets/HandballStadium/Materials/M_109_Floor02_Wall_10.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assets/HandballStadium/Materials/M_109_Floor02_Wall_10.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assets/HandballStadium/Materials/M_195_Out_Stair_Box_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/Assets/HandballStadium/Materials/M_195_Out_Stair_Box_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/FPS.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/FPS.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2o/Programación/FPS/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2o/Programación/FPS/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma marc/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma marc/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma marc/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma marc/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma marc/Transformaciones.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma marc/transforma.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma marc/transforma.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma/transforma.html" beforeDir="false" afterPath="$PROJECT_DIR$/../transforma/transforma.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../transforma/transforma.js" beforeDir="false" afterPath="$PROJECT_DIR$/../transforma/transforma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../viendo en 3d/camara.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../viendo en 3d/camara.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="21" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="372FnXr1SBOyJBQ7hKNafZVJHyo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="512468df-3df2-44c5-b57c-6b7b037bc578" name="Changes" comment="" />
+      <created>1766093430014</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1766093430014</updated>
+      <workItem from="1766093432309" duration="1389000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

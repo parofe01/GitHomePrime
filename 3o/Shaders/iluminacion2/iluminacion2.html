@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Spotlight Phong Shader</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { margin: 0 0 12px 0; font-size: 34px; font-weight: 700; }
+    #wrap { width: 820px; }
+    #row { display: flex; gap: 16px; align-items: flex-start; }
+    canvas { border: 1px solid #000; width: 600px; height: 600px; background: #222; }
+    #controls { width: 200px; }
+    label { display: block; margin-top: 10px; font-size: 14px; }
+    input[type="number"] { width: 70px; }
+    input[type="range"] { width: 180px; }
+    .value { font-size: 12px; margin-left: 8px; }
+    select { width: 190px; }
+    .muted { color: #666; font-size: 12px; margin-top: 8px; }
+  </style>
+
+  <script id="myVertexShader" type="x-shader/x-vertex">#version 300 es
+  uniform mat4 modelViewMatrix;
+  uniform mat4 projectionMatrix;
+  uniform mat3 normalMatrix;
+
+  in vec3 VertexPosition;
+  in vec3 VertexNormal;
+
+  out vec3 vN;   // normal en espacio ojo
+  out vec3 vEC;  // posición en espacio ojo
+
+  void main() {
+    vec4 ecPos = modelViewMatrix * vec4(VertexPosition, 1.0);
+    vEC = ecPos.xyz;
+    vN  = normalize(normalMatrix * VertexNormal);
+    gl_Position = projectionMatrix * ecPos;
+  }
+  </script>
+
+  <script id="myFragmentShader" type="x-shader/x-fragment">#version 300 es
+  precision mediump float;
+
+  in vec3 vN;
+  in vec3 vEC;
+  out vec4 fragmentColor;
+
+  struct LightData {
+    vec3 Position;    // en espacio ojo
+    vec3 Direction;   // en espacio ojo (normalizada)
+    float Exponent;
+    float Cutoff;     // grados (se clamp a 0..90)
+
+    float AttA;
+    float AttB;
+    float AttC;
+
+    vec3 La;
+    vec3 Ld;
+    vec3 Ls;
+  };
+  uniform LightData Light;
+
+  struct MaterialData {
+    vec3 Ka;
+    vec3 Kd;
+    vec3 Ks;
+    float alpha;
+  };
+  uniform MaterialData MaterialFront;
+  uniform MaterialData MaterialBack;
+
+  struct FogData {
+    float minDist;
+    float maxDist;
+    vec3 color;
+    int enabled;
+    int useExp; // 0 lineal, 1 exp
+  };
+  uniform FogData Fog;
+
+  // 1: Phong, 2: Toon, 3: Fog, 4: Spotlight Phong, 5: Two-sided
+  uniform int uMode;
+
+  float computeAttenuation(float d) {
+    return 1.0 / (Light.AttA + Light.AttB * d + Light.AttC * d * d);
+  }
+
+  float computeSpotFactor(vec3 ec) {
+    // S: del fragmento hacia la luz
+    vec3 S = normalize(Light.Position - ec);
+    // -S: de la luz hacia el fragmento
+    vec3 D = normalize(Light.Direction);
+
+    float cutoff = radians(clamp(Light.Cutoff, 0.0, 90.0));
+    float cdot = clamp(dot(-S, D), -1.0, 1.0);
+    float angle = acos(cdot);
+
+    if (angle < cutoff) {
+      float base = max(0.0, dot(-S, D));
+      if (Light.Exponent <= 0.0) return 1.0;
+      return pow(base, Light.Exponent);
+    }
+    return 0.0;
+  }
+
+  vec3 phong(MaterialData M, vec3 N, vec3 L, vec3 V, float spot, float att) {
+    vec3 ambient  = M.Ka * Light.La;
+
+    float NdotL = max(0.0, dot(N, L));
+    vec3 diffuse = NdotL * (Light.Ld * M.Kd);
+
+    vec3 specular = vec3(0.0);
+    if (NdotL > 0.0) {
+      vec3 R = reflect(-L, N);
+      specular = pow(max(0.0, dot(R, V)), M.alpha) * (Light.Ls * M.Ks);
+    }
+
+    return ambient + (spot * att) * (diffuse + specular);
+  }
+
+  vec3 toon(MaterialData M, vec3 N, vec3 L) {
+    vec3 ambient = M.Ka * Light.La;
+    float NdotL = max(0.0, dot(N, L));
+
+    float levels = 3.0;
+    float q = ceil(NdotL * levels) / levels;
+
+    vec3 diffuse = q * (Light.Ld * M.Kd);
+    return ambient + diffuse;
+  }
+
+  vec3 applyFog(vec3 baseColor, vec3 ec) {
+    if (Fog.enabled == 0) return baseColor;
+
+    float dist = abs(ec.z);
+    float fogFactor;
+
+    if (Fog.useExp == 0) {
+      fogFactor = (Fog.maxDist - dist) / (Fog.maxDist - Fog.minDist);
+    } else {
+      fogFactor = exp(-pow(dist, 2.0));
+    }
+
+    fogFactor = clamp(fogFactor, 0.0, 1.0);
+    return mix(Fog.color, baseColor, fogFactor);
+  }
+
+  void main() {
+    // ====== Two-sided SOLO en modo 5 ======
+    vec3 N = normalize(vN);
+    MaterialData M = MaterialFront;
+
+    if (uMode == 5) {
+      if (!gl_FrontFacing) {
+        N = -N;
+        M = MaterialBack;
+      }
+    } else {
+      // One-sided (modo 1..4): si miras "por detrás", no forzamos material back.
+      // Si quieres hacerlo más evidente, puedes descomentar:
+      // if (!gl_FrontFacing) discard;
+    }
+
+    vec3 V = normalize(-vEC);
+
+    // Luz posicional
+    vec3 Lvec = Light.Position - vEC;
+    float d = length(Lvec);
+    vec3 L = normalize(Lvec);
+
+    float att = 1.0;
+    float spot = 1.0;
+
+    if (uMode == 4) {
+      att = computeAttenuation(d);
+      spot = computeSpotFactor(vEC);
+    }
+
+    vec3 color;
+    if (uMode == 2) color = toon(M, N, L);
+    else           color = phong(M, N, L, V, spot, att);
+
+    if (uMode == 3) color = applyFog(color, vEC);
+
+    fragmentColor = vec4(color, 1.0);
+  }
+  </script>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>Spotlight Phong Shader</h1>
+
+    <div id="row">
+      <canvas id="myCanvas" width="600" height="600">Tu navegador no soporta HTML5</canvas>
+
+      <div id="controls">
+        <label>
+          Shader
+          <select id="shaderSelect">
+            <option value="4" selected>Spotlight Phong Shader</option>
+            <option value="1">Phong Shader</option>
+            <option value="2">Toon Shader</option>
+            <option value="3">Fog Shader</option>
+            <option value="5">Two-sided Shader</option>
+          </select>
+        </label>
+
+          <label>Dirección de luz X</label>
+          <input id="dirX" type="number" step="0.1" value="-0.1">
+
+          <label>Dirección de luz Y</label>
+          <input id="dirY" type="number" step="0.1" value="-0.2">
+
+          <label>Dirección de luz Z</label>
+          <input id="dirZ" type="number" step="0.1" value="-0.5">
+
+          <label>
+              Exponente
+              <input id="exp" type="range" min="0" max="100" step="1" value="80">
+              <span class="value" id="expVal">80</span>
+          </label>
+
+          <label>
+              Cutoff
+              <input id="cut" type="range" min="0" max="100" step="1" value="10">
+              <span class="value" id="cutVal">10</span>
+          </label>
+
+          <label>
+              <input id="ground" type="checkbox" checked>
+              Mostrar suelo
+          </label>
+
+          <div class="muted">Atajos: arrastrar para rotar, rueda para zoom, Shift+arrastrar para pan.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.4.0/gl-matrix.js"></script>
+  <script src="iluminacion2.js"></script>
+</body>
+</html>
